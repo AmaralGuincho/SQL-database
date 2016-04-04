@@ -35,6 +35,31 @@ CREATE TABLE cargo
   PRIMARY KEY(id_cargo)
 );
 
+CREATE TABLE motorista
+(
+    id_mot INT NOT NULL AUTO_INCREMENT,
+    nome_mot VARCHAR(20) NOT NULL,
+    sobrenome_mot VARCHAR(30) NOT NULL,
+    dtnasc_mot DATE NOT NULL,
+    cep_mot CHAR(8) NOT NULL,
+    dtcont_mot DATE NOT NULL,
+    sx_mot CHAR(1) NOT NULL,
+    tel_mot INT NOT NULL,
+    email_mot VARCHAR(30) NOT NULL,
+    cid_mot VARCHAR(20) NOT NULL,
+    #habilitacao
+    nregistro_hab INT(12) NOT NULL,
+    validade_hab DATE NOT NULL,
+    local_hab VARCHAR(30) NOT NULL,
+    dtemissao_hab DATE NOT NULL,
+
+    PRIMARY KEY (id_mot),
+    CONSTRAINT ch_sx CHECK (sx_mot = "M" or "F"),
+    CONSTRAINT uq_cep UNIQUE (cep_mot),
+    CONSTRAINT uq_email UNIQUE (email_mot),
+    CONSTRAINT uq_nregistro UNIQUE (nregistro_hab)
+);
+
 CREATE TABLE funcionario
 (
     id_func INT NOT NULL AUTO_INCREMENT,
@@ -57,7 +82,8 @@ CREATE TABLE funcionario
     CONSTRAINT uq_email UNIQUE (email_func),
     CONSTRAINT uq_tel UNIQUE (tel_func),
     CONSTRAINT ch_sx CHECK (sx_func = "M" or "F"),
-    FOREIGN KEY (id_cargo) REFERENCES cargo(id_cargo)
+    FOREIGN KEY (id_cargo) REFERENCES cargo(id_cargo),
+    FOREIGN KEY (id_mot) REFERENCES motorista(id_mot)
 );
 
 CREATE TABLE seguro
@@ -145,31 +171,6 @@ CREATE TABLE seguro
   PRIMARY KEY (id_seguro)
 );
 
-CREATE TABLE motorista
-(
-    id_mot INT NOT NULL AUTO_INCREMENT,
-    nome_mot VARCHAR(20) NOT NULL,
-    sobrenome_mot VARCHAR(30) NOT NULL,
-    dtnasc_mot DATE NOT NULL,
-    cep_mot CHAR(8) NOT NULL,
-    dtcont_mot DATE NOT NULL,
-    sx_mot CHAR(1) NOT NULL,
-    tel_mot INT NOT NULL,
-    email_mot VARCHAR(30) NOT NULL,
-    cid_mot VARCHAR(20) NOT NULL,
-    #habilitacao
-    nregistro_hab INT(12) NOT NULL,
-    validade_hab DATE NOT NULL,
-    local_hab VARCHAR(30) NOT NULL,
-    dtemissao_hab DATE NOT NULL,
-
-    PRIMARY KEY (id_mot),
-    CONSTRAINT ch_sx CHECK (sx_mot = "M" or "F"),
-    CONSTRAINT uq_cep UNIQUE (cep_mot),
-    CONSTRAINT uq_email UNIQUE (email_mot),
-    CONSTRAINT uq_nregistro UNIQUE (nregistro_hab)
-);
-
 CREATE TABLE frota
 (
     id_frota INT NOT NULL AUTO_INCREMENT,
@@ -217,7 +218,8 @@ CREATE TABLE servico
 (
     id_servico INT NOT NULL AUTO_INCREMENT,
     tipo_servico VARCHAR(30) NOT NULL,
-    preco_servico FLOAT NOT NULL,
+    precoR_servico FLOAT NOT NULL,
+    precoC_servico FLOAT NOT NULL,
 
     PRIMARY KEY (id_servico)
 );
@@ -229,6 +231,15 @@ CREATE TABLE viagem
     id_frota INT NOT NULL,
     locals_viagem VARCHAR(20) NOT NULL,
     localc_viagem VARCHAR(20) NOT NULL,
+    enderecoS_viagem VARCHAR(30) NOT NULL,
+    enderecoC_viagem VARCHAR(30) NOT NULL,
+    numeroS_viagem VARCHAR(5) NULL,
+    numeroC_viagem VARCHAR(5) NULL,
+    cidadeS_viagem VARCHAR(20) NOT NULL,
+    cidadeC_viagem VARCHAR(20) NOT NULL,
+    ufS_viagem VARCHAR(2) NOT NULL,
+    ufC_viagem VARCHAR(2) NOT NULL,
+    obs_viagem TEXT NULL,
 
     PRIMARY KEY (id_viagem),
     FOREIGN KEY (id_mot) REFERENCES motorista (id_mot),
