@@ -38,25 +38,15 @@ CREATE TABLE cargo
 CREATE TABLE motorista
 (
     id_mot INT NOT NULL AUTO_INCREMENT,
-    nome_mot VARCHAR(20) NOT NULL,
-    sobrenome_mot VARCHAR(30) NOT NULL,
-    dtnasc_mot DATE NOT NULL,
-    cep_mot CHAR(8) NOT NULL,
-    dtcont_mot DATE NOT NULL,
-    sx_mot CHAR(1) NOT NULL,
-    tel_mot INT NOT NULL,
-    email_mot VARCHAR(30) NOT NULL,
-    cid_mot VARCHAR(20) NOT NULL,
     #habilitacao
+    nome_hab INT(30) NOT NULL,
+    idhab_hab INT(30) NOT NULL,
     nregistro_hab INT(12) NOT NULL,
     validade_hab DATE NOT NULL,
     local_hab VARCHAR(30) NOT NULL,
     dtemissao_hab DATE NOT NULL,
 
     PRIMARY KEY (id_mot),
-    CONSTRAINT ch_sx CHECK (sx_mot = "M" or "F"),
-    CONSTRAINT uq_cep UNIQUE (cep_mot),
-    CONSTRAINT uq_email UNIQUE (email_mot),
     CONSTRAINT uq_nregistro UNIQUE (nregistro_hab)
 );
 
