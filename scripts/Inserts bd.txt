@@ -1,0 +1,58 @@
+Table usr
+
+Insert into usr values(0,"Arthur_1","arthur_t_oliveira@gmail.com","123456789","usr","Arthur Tomás Vitor Oliveira","M","1994-06-11","584.380.026-17","13311-032","11993186668");
+Insert into usr values(0,"Juan_2","juan.carlos.cardoso@gmail.com","123654987","staff","Juan Carlos Eduardo Cardoso","M","1994-09-04","076.447.491-01","03720-180","1198408-9306");
+Insert into usr values(0,"Melissa_3","melissa.valentina.pereira@hotmail.com.br","321456789","lowStaff","Melissa Valentina Pereira","F","1994-11-24","585.328.758-31","03189-210","1199190-9664");
+Insert into usr values(0,"Luiz_4","luiz-marcelo96@hotmail.com.br","25874369","adm","Luiz Marcelo Costa","M","1994-09-19","890.673.015-23","09510-970","1199864-0092");
+
+
+Table frota
+
+Insert into frota values(0,"Guincho","sxc1547");
+Insert into frota values(0,"Taxi","efd4504");
+Insert into frota values(0,"SOS-Guincho","mnb7412");
+Insert into frota values(0,"Pesado","ntf1402");
+
+Table seguro
+
+Insert into seguro values(0,"Porto Seguro","urbsdaf","12200-101","14016532353","1239174520","12547628301","11325478963","11254367890","xxx","99","100","1999","1000","200","300","500","150","50","60","80","70","500","400","200","500","600","900","400","500","700","700","200","990","100","200","200","100","400","700","800","900","100","500","200","99","200","201","300","100","100","20","50","100","500","99","80","70","40","100","90","80","20","30","40");
+
+
+Table Seguro_cli
+
+Insert into seguro_cli values(0,"1","1","1","xxx","xxx");
+
+Table Habilitação
+
+Insert into habilitacao values (0,"1","Kaique Heitor Ribeiro","377563559","258741369520","2023-05-30","1950-08-10","Poupa Tempo SP","2008-06-10");
+Insert into habilitacao values (0,"2","Tomás Matheus Dias","240135726","123587469201","2020-04-01","1980-04-20","Poupa Tempo RJ","2010-05-01");
+Insert into habilitacao values (0,"3","Francisco Julio Rocha","252056206,"025147963852","2018-02-09","1990-09-09","Poupa Tempo RS","2009-01-01");
+Insert into habilitacao values (0,"4","Arthur Lorenzo Cardoso","366907463","012365478963","2019-04-01","1975-01-03","Poupa Tempo MG","2011-05-05");
+
+Table Veiculo
+
+Insert into veiculo values (0,"1","Hyundai HB20","asd1596","Prata");
+Insert into veiculo values (0,"2","Honda Civic","enh0660","Branco");
+Insert into veiculo values (0,"3","Volkswagen GOL","mjb4050","Preto");
+Insert into veiculo values (0,"4","Ford FOCUS","asw2147","Prata");
+
+Table Ordem de Serviço
+
+Insert into ordem_de_servico values (0,"1","2015-01-05","1","1","Breno Raul Vitor Pinto","Completo","2","São Paulo","2016-01-02","1122","São José dos Campos","2","Aberto");
+Insert into ordem_de_servico values (0,"2","2014-02-01","2","2","Otávio Isaac Nascimento","Half","3","Jacarei","2016-02-01","11585","São Paulo","3","Recusado");
+Insert into ordem_de_servico values (0,"3","2013-05-04","3","3","Ricardo Enzo Gabriel Rocha","Completo","4","Rio de Janeiro","2016-07-02","1565","São José dos Campos","4","Outro");
+Insert into ordem_de_servico values (0,"4","2015-08-04","4","4","Henrique Marcelo Benício Costa","Half","4","Caçapava","2016-04-02","1650","Jacarei","2","Fechado");
+
+Table Viagem
+
+Insert into viagem values (0,"1","2","3","4","22 Km","10 Km","8 Horas");
+Insert into viagem values (0,"2","3","4","1","24 Km","40 Km","9 Horas");
+Insert into viagem values (0,"3","2","1","4","10 Km","35 Km","6 Horas");
+Insert into viagem values (0,"4","1","2","3","21 Km","20 Km","5 Horas");
+
+Table Session
+
+Insert into session values (0,"1","2016-01-02","1");
+Insert into session values (0,"2","2015-05-01","2");
+Insert into session values (0,"3","2014-04-02","4");
+Insert into session values (0,"2","2016-05-01","3");
