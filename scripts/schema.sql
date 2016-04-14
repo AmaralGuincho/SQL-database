@@ -16,7 +16,7 @@ CREATE TABLE cliente
     cep_cli CHAR(11) NOT NULL,
     cid_cli CHAR(11) NOT NULL,
     us_cli CHAR(2) NOT NULL,
-    telefone_cli CHAR(12) NOT NULL,
+    telefone_cli CHAR(11) NOT NULL,
 
     PRIMARY KEY (id_cli),
     CONSTRAINT ch_sx CHECK (sx_cli = "M" or "F"),
@@ -180,9 +180,9 @@ CREATE TABLE veiculo
 (
     id_veiculo INT NOT NULL AUTO_INCREMENT,
     id_cli INT NOT NULL,
-    modelo_veiculo VARCHAR (30) NOT NULL,
-    ano_veiculo DATE NOT NULL,
     fabricante_veiculo VARCHAR(20) NOT NULL,
+    modelo_veiculo VARCHAR (30) NOT NULL,
+    ano_veiculo DATE NOT NULL,    
     placa_veiculo VARCHAR(7) NOT NULL,
     cor_veiculo VARCHAR(10) NOT NULL,
 
@@ -236,7 +236,7 @@ CREATE TABLE viagem
     FOREIGN KEY (id_frota) REFERENCES frota (id_frota)
 );
 
-CREATE TABLE viagem_serviço
+CREATE TABLE viagem_servico
 (
     id_viagem INT NOT NULL AUTO_INCREMENT,
     id_servico INT NOT NULL,
@@ -254,8 +254,8 @@ CREATE TABLE ordem_de_servico
     id_func INT NOT NULL,
     id_veiculo INT NOT NULL,
     dtab_os DATETIME NOT NULL,
-    status_os VARCHAR(20) NOT NULL,
     agendamento_os VARCHAR(100) NULL,
+    status_os VARCHAR(20) NOT NULL,
 
     PRIMARY KEY (id_os),
     FOREIGN KEY (id_func) REFERENCES funcionario(id_func),
