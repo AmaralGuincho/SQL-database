@@ -35,21 +35,6 @@ CREATE TABLE cargo
   PRIMARY KEY(id_cargo)
 );
 
-CREATE TABLE motorista
-(
-    id_mot INT NOT NULL AUTO_INCREMENT,
-    #habilitacao
-    nome_hab INT(30) NOT NULL,
-    idhab_hab INT(30) NOT NULL,
-    nregistro_hab INT(12) NOT NULL,
-    validade_hab DATE NOT NULL,
-    local_hab VARCHAR(30) NOT NULL,
-    dtemissao_hab DATE NOT NULL,
-
-    PRIMARY KEY (id_mot),
-    CONSTRAINT uq_nregistro UNIQUE (nregistro_hab)
-);
-
 CREATE TABLE funcionario
 (
     id_func INT NOT NULL AUTO_INCREMENT,
@@ -72,8 +57,24 @@ CREATE TABLE funcionario
     CONSTRAINT uq_email UNIQUE (email_func),
     CONSTRAINT uq_tel UNIQUE (tel_func),
     CONSTRAINT ch_sx CHECK (sx_func = "M" or "F"),
-    FOREIGN KEY (id_cargo) REFERENCES cargo(id_cargo),
-    FOREIGN KEY (id_mot) REFERENCES motorista(id_mot)
+    FOREIGN KEY (id_cargo) REFERENCES cargo(id_cargo)
+);
+
+CREATE TABLE motorista
+(
+    id_mot INT NOT NULL AUTO_INCREMENT,
+    id_func INT NOT NULL,
+    #habilitacao
+    nome_hab INT(30) NOT NULL,
+    idhab_hab INT(30) NOT NULL,
+    nregistro_hab INT(12) NOT NULL,
+    validade_hab DATE NOT NULL,
+    local_hab VARCHAR(30) NOT NULL,
+    dtemissao_hab DATE NOT NULL,
+
+    PRIMARY KEY (id_mot),
+    CONSTRAINT uq_nregistro UNIQUE (nregistro_hab),
+    FOREIGN KEY (id_func) REFERENCES funcionario(id_func)
 );
 
 CREATE TABLE seguro
