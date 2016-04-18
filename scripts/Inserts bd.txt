@@ -1,0 +1,77 @@
+#Table cliente
+
+Insert into cliente values(0,"Arthur_1","bobao","123456789","arthur_t_oliveira@gmail.com","M","1994-06-11","12345678901","Jacareí","SP","12991234567");
+Insert into cliente values(0,"Juan_2","vagal","123654987","juan.carlos.cardoso@gmail.com","M","1994-09-04","09876543212","São José dos Campos","11984089306");
+Insert into cliente values(0,"Melissa_3","doente","321456789","melissa.valentina.pereira@hotmail.com.br","F","1994-11-24","23456789009","Caragua","11991909664");
+Insert into cliente values(0,"Luiz_4","retardado","25874369","luiz-marcelo96@hotmail.com.br","M","1994-09-19","34512378902","Ubatuba","11998640092");
+
+#table cargo
+
+Insert into cargo values(0,"Dono","10000.00");
+Insert into cargo values(0,"Gerente","3000.00");
+Insert into cargo values(0,"Funcionario","1000.00");
+
+#Table motorista
+
+Insert into motorista values (0,"Kaique Heitor Ribeiro","377563559","258741369520","2023-05-30","Poupa Tempo SP","2008-06-10");
+Insert into motorista values (0,"Tom�s Matheus Dias","240135726","123587469201","2020-04-01","Poupa Tempo RJ","2010-05-01");
+Insert into motorista values (0,"Francisco Julio Rocha","252056206","025147963852","2018-02-09","Poupa Tempo RS","2009-01-01");
+Insert into motorista values (0,"Arthur Lorenzo Cardoso","366907463","012365478963","2019-04-01","Poupa Tempo MG","2011-05-05");
+
+#Table funcionario
+
+Insert into funcionario values (0,"1","Joao","Vacilao","1994-08-12","12345678","12345678905","2012-09-20","M","12987654321","joaovacilao@hotmail.com","SP","Campinas");
+
+#Table frota
+
+Insert into frota values(0,"bebum","imperio","2007-08-10","chevrolet","Guincho","sxc1547","preto");
+Insert into frota values(0,"boco","vectra","2014-12-23","jeep","Taxi","efd4504","amarelo");
+Insert into frota values(0,"feio","franca","2009-01-13","bmw","SOS-Guincho","mnb7412","branco");
+Insert into frota values(0,"horrivel","monstro","2012-03-30","peugout","Pesado","ntf1402","verde");
+
+#Table seguro
+
+Insert into seguro values(0,"Porto Seguro","urbsdaf","12200-101","14016532353","1239174520","12547628301","11325478963","11254367890","xxx","99","100","1999","1000","200","300","500","150","50","60","80","70","500","400","200","500","600","900","400","500","700","700","200","990","100","200","200","100","400","700","800","900","100","500","200","99","200","201","300","100","100","20","50","100","500","99","80","70","40","100","90","80","20","30","40");
+
+#Table Veiculo
+
+Insert into veiculo values (0,"1","Hyundai","HB20","2010-10-29","asd1596","Prata");
+Insert into veiculo values (0,"2","Honda","Civic","2013-03-10","enh0660","Branco");
+Insert into veiculo values (0,"3","Volkswagen","GOL","2011-02-02","mjb4050","Preto");
+Insert into veiculo values (0,"4","Ford","FOCUS","2008-08-28","asw2147","Prata");
+
+#Table sinistro
+
+Insert into sinistro values(0,"adm","1","1","Sul America");
+
+#Table servico
+
+Insert into servico values(0,"Especial","300.00","288.00");
+
+#Table Viagem
+
+Insert into viagem values (0,"1","2","3","4","22 Km","10 Km","8 Horas");
+Insert into viagem values (0,"2","3","4","1","24 Km","40 Km","9 Horas");
+Insert into viagem values (0,"3","2","1","4","10 Km","35 Km","6 Horas");
+Insert into viagem values (0,"4","1","2","3","21 Km","20 Km","5 Horas");
+
+##Table Viagem_servico
+
+Insert into viagem_servico values (0,"1");
+Insert into viagem_servico values (0,"2");
+Insert into viagem_servico values (0,"3");
+Insert into viagem_servico values (0,"4");
+
+#Table Ordem de Servi�o
+
+Insert into ordem_de_servico values (0,"1","1","2","2015-01-05","2016-01-02","Aberto");
+Insert into ordem_de_servico values (0,"2","3","1","2014-02-01","2016-02-01","Recusado");
+Insert into ordem_de_servico values (0,"3","4","3","2013-05-04","2016-07-02","Outro");
+Insert into ordem_de_servico values (0,"4","2","4","2015-08-04","2016-04-02","Fechado");
+
+#Table servico_os
+
+Insert into session values (0,"1","1");
+Insert into session values (0,"2","2");
+Insert into session values (0,"3","4");
+Insert into session values (0,"4","3");
