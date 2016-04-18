@@ -83,13 +83,11 @@ Insert into viagem_servico values (0,"3");
 
 
 
-#Table Ordem de Serviço +
+#Table Ordem de Serviço 
 
 Insert into ordem_de_servico values (0,"1","4","2016-04-14","xxx","Aberto");
 Insert into ordem_de_servico values (0,"2","3","2016-02-01","xxx","Fechado");
 Insert into ordem_de_servico values (0,"3","2","2016-02-03","xxx","Rejeitado");
-
-
 
 
 #Table servico_os
