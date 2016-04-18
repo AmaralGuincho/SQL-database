@@ -1,8 +1,8 @@
-DROP DATABASE amaral_guincho;
+DROP DATABASE amaralguincho;
 
-CREATE DATABASE amaral_guincho;
+CREATE DATABASE amaralguincho;
 
-USE amaral_guincho;
+USE amaralguincho;
 
 CREATE TABLE cliente
 (
@@ -182,7 +182,7 @@ CREATE TABLE veiculo
     id_cli INT NOT NULL,
     fabricante_veiculo VARCHAR(20) NOT NULL,
     modelo_veiculo VARCHAR (30) NOT NULL,
-    ano_veiculo DATE NOT NULL,    
+    ano_veiculo DATE NOT NULL,
     placa_veiculo VARCHAR(7) NOT NULL,
     cor_veiculo VARCHAR(10) NOT NULL,
 
