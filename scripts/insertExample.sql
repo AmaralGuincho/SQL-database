@@ -17,11 +17,10 @@ INSERT INTO cargo VALUES(4,"outro","900");
 
 #Table FUNCIONARIO
 
-Insert into funcionario values(0,"1","Yuri Henrique","Filipine","1980-01-03","12255004","32485163021","2016-05-04","M","1239170542","Yuri_real@gmail.com","SP","SJCampos");
-Insert into funcionario values(0,"2","Gabriel Augusto","Prado Antunes","1992-07-29","12233002","32755482010","2016-04-01","M","1239172045","Augusto_1@gmail.com","SP","SJCampos");
-Insert into funcionario values(0,"4","Marcos Reis","Moreno","1991-04-07","12501005","35795102010","2016-01-02","M","1299140057","Marcos_2@gmail.com","SP","Jacarei");
-Insert into funcionario values(0,"3","Gabriel Bacarin","Marcondes","1990-10-11","11152001","36925814720","2015-09-20","M","12392454","Gabriel_3@gmail.com","SP","Caçapava");
-
+Insert into funcionario values(0,"1","Yuri","Henrique Filipine","1980-01-03","12255004","32485163021","2016-05-04","M","1239170542","Yuri_real@gmail.com","SP","SJCampos");
+Insert into funcionario values(0,"2","Gabriel"," Augusto Prado Antunes","1992-07-29","12233002","32755482010","2016-04-01","M","1239172045","Augusto_1@gmail.com","SP","SJCampos");
+Insert into funcionario values(0,"4","Marcos","Reis Moreno","1991-04-07","12501005","35795102010","2016-01-02","M","1299140057","Marcos_2@gmail.com","SP","Jacarei");
+Insert into funcionario values(0,"3","Gabriel","Bacarin Marcondes","1990-10-11","11152001","36925814720","2015-09-20","M","12392454","Gabriel_3@gmail.com","SP","Caçapava");
 
 #Table MOTORISTA
 
