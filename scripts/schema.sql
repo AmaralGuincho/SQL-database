@@ -60,6 +60,15 @@ CREATE TABLE funcionario
     FOREIGN KEY (id_cargo) REFERENCES cargo(id_cargo)
 );
 
+CREATE TABLE login(
+  id_login INT NOT NULL AUTO_INCREMENT,
+  username_login VARCHAR(50) NOT NULL,
+  password_login VARCHAR(50) NOT NULL,
+  id_func INT NOT NULL,
+
+  FOREIGN KEY(id_func) REFERENCES funcionario(id_func)
+);
+
 CREATE TABLE motorista
 (
     id_mot INT NOT NULL AUTO_INCREMENT,
