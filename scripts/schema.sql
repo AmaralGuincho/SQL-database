@@ -1,4 +1,4 @@
-DROP DATABASE amaralguincho;
+DROP DATABASE IF EXISTS amaralguincho;
 
 CREATE DATABASE amaralguincho;
 
@@ -46,7 +46,7 @@ CREATE TABLE funcionario
     cpf_func CHAR(11) NOT NULL,
     dtcont_func DATE NOT NULL,
     sx_func CHAR(1) NOT NULL,
-    tel_func CHAR(10) NOT NULL,
+    tel_func CHAR(11) NOT NULL,
     email_func VARCHAR(30) NOT NULL,
     uf_func CHAR(2) NOT NULL,
     cid_func VARCHAR(20) NOT NULL,
