@@ -52,7 +52,6 @@ CREATE TABLE funcionario
     cid_func VARCHAR(20) NOT NULL,
 
     PRIMARY KEY (id_func),
-    CONSTRAINT uq_cep UNIQUE (cep_func),
     CONSTRAINT uq_cpf UNIQUE (cpf_func),
     CONSTRAINT uq_email UNIQUE (email_func),
     CONSTRAINT uq_tel UNIQUE (tel_func),
