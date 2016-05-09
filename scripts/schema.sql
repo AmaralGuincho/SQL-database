@@ -17,6 +17,7 @@ CREATE TABLE cliente
     cid_cli CHAR(11) NOT NULL,
     us_cli CHAR(2) NOT NULL,
     telefone_cli CHAR(11) NOT NULL,
+    img_cli TEXT NOT NULL,
 
     PRIMARY KEY (id_cli),
     CONSTRAINT ch_sx CHECK (sx_cli = "M" or "F"),
@@ -50,6 +51,7 @@ CREATE TABLE funcionario
     email_func VARCHAR(30) NOT NULL,
     uf_func CHAR(2) NOT NULL,
     cid_func VARCHAR(20) NOT NULL,
+    img_func TEXT NOT NULL,
 
     PRIMARY KEY (id_func),
     CONSTRAINT uq_cpf UNIQUE (cpf_func),
@@ -181,6 +183,7 @@ CREATE TABLE frota
     tipo_frota VARCHAR(20) NOT NULL,
     placa_frota CHAR(7) NOT NULL,
     cor_frota VARCHAR(20) NULL,
+    img_frota TEXT NOT NULL,
 
     PRIMARY KEY (id_frota),
     CONSTRAINT uq_placa UNIQUE (placa_frota)
