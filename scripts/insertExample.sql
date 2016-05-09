@@ -10,11 +10,10 @@ Insert into cliente values(0,"Luiz","Marcelo","02145879650","Luiz_4@gmail.com","
 
 #Table CARGO
 
-Insert into cargo values(0,"Faxineiro","1000");
-Insert into cargo values(0,"Auxiliar","3000");
-Insert into cargo values(0,"Atendente","4000");
-Insert into cargo values(0,"Gerente","5000");
-
+INSERT INTO cargo VALUES(1,"Administrador","100000");
+INSERT INTO cargo VALUES(2,"Secretaria","1000");
+INSERT INTO cargo VALUES(3,"Motorista","800");
+INSERT INTO cargo VALUES(4,"outro","900");
 
 #Table FUNCIONARIO
 
