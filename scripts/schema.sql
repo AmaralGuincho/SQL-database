@@ -31,7 +31,7 @@ CREATE TABLE cargo
   id_cargo INT NOT NULL AUTO_INCREMENT,
   cargo VARCHAR(30) NOT NULL,
   salario FLOAT NOT NULL,
-
+  CONSTRAINT uq_cargo UNIQUE (cargo),
   PRIMARY KEY(id_cargo)
 );
 
