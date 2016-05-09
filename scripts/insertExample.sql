@@ -40,9 +40,9 @@ Insert into seguro values (0,"Porto Seguro","404","25814706","25420","1230140010
 
 #Table FROTA
 
-INSERT INTO frota VALUES(0,"Guincho","xxx","2014-01-02","VEIGIN","Guincho","abc1234","Amarelo");
+INSERT INTO frota VALUES(0,"IVECO-Guincho","IVECO","2014-01-02","VEIGIN","Guincho","abc1234","Amarelo");
 INSERT INTO frota VALUES(0,"Taxi","Honda Civic","2015-01-02","HONDA","Taxi","tax1666","Branco");
-INSERT INTO frota VALUES(0,"SOS-Guincho","xxx","2014-08-01","VEIGIN","SOS","sos4004","Amarelo");
+INSERT INTO frota VALUES(0,"IVECO-SOS-Guincho","IVECO","2014-08-01","VEIGIN","SOS","sos4004","Amarelo");
 
 
 #Table Veiculo
