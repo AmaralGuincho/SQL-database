@@ -65,6 +65,7 @@ CREATE TABLE login(
   password_login VARCHAR(50) NOT NULL,
   id_func INT NOT NULL,
 
+  PRIMARY KEY(id_login),
   FOREIGN KEY(id_func) REFERENCES funcionario(id_func)
 );
 
@@ -282,3 +283,21 @@ CREATE TABLE servico_os
     FOREIGN KEY (id_servico) REFERENCES servico(id_servico),
     FOREIGN KEY (id_sinistro) REFERENCES sinistro(id_sinistro)
 );
+
+# TRIGGERS AND PROCEDURES
+DROP TRIGGER IF EXISTS defaultLogin;
+
+DELIMITER $$
+
+CREATE TRIGGER defaultLogin
+  AFTER INSERT ON funcionario
+FOR EACH ROW
+BEGIN
+  INSERT INTO login VALUES(0,NEW.email_func,"0000",new.id_func);
+END$$
+
+DELIMITER ;
+
+system cls;
+system clear;
+SELECT "BASE DE DADOS GRAVADA COM SUCESSO 👏" as "CONCLUIDO 🍻";
