@@ -2,10 +2,10 @@
 
 #Table CLIENTE
 
-Insert into cliente values(0,"Arthur","Oliveira","32721489620","Artur_1@gmail.com","M","1994-06-11","13311032","SJCampos","SP","11993186668");
-Insert into cliente values(0,"Juan","Carlos","02154789610","Juan_2@hotmail.com","M","1994-09-04","154255001","Jacarei","SP","11984089306");
-Insert into cliente values(0,"Melissa","Valentina","21458796210","Melissa_3@outlook.com","F","1994-11-24","124225101","Sao Paulo","RJ","11991909664");
-Insert into cliente values(0,"Luiz","Marcelo","02145879650","Luiz_4@gmail.com","M","1994-09-19","12211005","Cacapava","SP","11992409164");
+Insert into cliente values(0,"Arthur","Oliveira","32721489620","Artur_1@gmail.com","M","1994-06-11","13311032","SJCampos","SP","11993186668",null);
+Insert into cliente values(0,"Juan","Carlos","02154789610","Juan_2@hotmail.com","M","1994-09-04","154255001","Jacarei","SP","11984089306",null);
+Insert into cliente values(0,"Melissa","Valentina","21458796210","Melissa_3@outlook.com","F","1994-11-24","124225101","Sao Paulo","RJ","11991909664",null);
+Insert into cliente values(0,"Luiz","Marcelo","02145879650","Luiz_4@gmail.com","M","1994-09-19","12211005","Cacapava","SP","11992409164",null);
 
 
 #Table CARGO
@@ -17,13 +17,12 @@ INSERT INTO cargo VALUES(4,"outro","900");
 
 #Table FUNCIONARIO
 
-INSERT INTO funcionario VALUES
-(0,"1","Theofilo","Amaral","1980-06-16","12223609","12345678912","2000-06-10","m","12345678901","theo@amaralguincho.com","SP","Caraguatatuba"),
-(0,"2","Jéssica","Amaral","1980-06-16","12223609","12345675912","2000-06-10","m","12345618901","jessica@amaralguincho.com","SP","Caraguatatuba"),
-(0,"1","Paulo","Roberto Amaral","1980-06-16","12223609","12545678912","2000-06-10","m","12345678301","pauloRoberto@amaralguincho.com","SP","Caraguatatuba"),
-(0,"3","Gabriel","Castro","1980-06-16","12223609","12345658912","2000-06-10","m","12345678921","gabriel@amaralguincho.com","SP","São José dos Campos"),
-(0,"3","Anderson","Panda Guedes","1980-06-16","12223609","12345628912","2000-06-10","m","12345378921","pandaozika@amaralguincho.com","SP","São José dos Campos"),
-(0,"3","Daniel","Miacci","1980-06-16","12223609","12345278912","2000-06-10","m","12345648921","miacci@amaralguincho.com","SP","São José dos Campos");
+INSERT INTO funcionario VALUES(0,"1","Theofilo","Amaral","1980-06-16","12223609","12345678912","2000-06-10","m","12345678901","theo@amaralguincho.com","SP","Caraguatatuba",null);
+INSERT INTO funcionario VALUES(0,"2","Jéssica","Amaral","1980-06-16","12223609","12345675912","2000-06-10","m","12345618901","jessica@amaralguincho.com","SP","Caraguatatuba",null);
+INSERT INTO funcionario VALUES(0,"1","Paulo","Roberto Amaral","1980-06-16","12223609","12545678912","2000-06-10","m","12345678301","pauloRoberto@amaralguincho.com","SP","Caraguatatuba",null);
+INSERT INTO funcionario VALUES(0,"3","Gabriel","Castro","1980-06-16","12223609","12345658912","2000-06-10","m","12345678921","gabriel@amaralguincho.com","SP","São José dos Campos",null);
+INSERT INTO funcionario VALUES(0,"3","Anderson","Panda Guedes","1980-06-16","12223609","12345628912","2000-06-10","m","12345378921","pandaozika@amaralguincho.com","SP","São José dos Campos",null);
+INSERT INTO funcionario VALUES(0,"3","Daniel","Miacci","1980-06-16","12223609","12345278912","2000-06-10","m","12345648921","miacci@amaralguincho.com","SP","São José dos Campos",null);
 
 #Table MOTORISTA
 
@@ -43,9 +42,9 @@ Insert into seguro values (0,"Porto Seguro","404","25814706","25420","1230140010
 
 #Table FROTA
 
-INSERT INTO frota VALUES(0,"IVECO-Guincho","IVECO","2014-01-02","VEIGIN","Guincho","abc1234","Amarelo");
-INSERT INTO frota VALUES(0,"Taxi","Honda Civic","2015-01-02","HONDA","Taxi","tax1666","Branco");
-INSERT INTO frota VALUES(0,"IVECO-SOS-Guincho","IVECO","2014-08-01","VEIGIN","SOS","sos4004","Amarelo");
+INSERT INTO frota VALUES(0,"IVECO-Guincho","IVECO","2014-01-02","VEIGIN","Guincho","abc1234","Amarelo",null);
+INSERT INTO frota VALUES(0,"Taxi","Honda Civic","2015-01-02","HONDA","Taxi","tax1666","Branco",null);
+INSERT INTO frota VALUES(0,"IVECO-SOS-Guincho","IVECO","2014-08-01","VEIGIN","SOS","sos4004","Amarelo",null);
 
 
 #Table Veiculo
