@@ -32,6 +32,7 @@ CREATE TABLE cargo
   id_cargo INT NOT NULL AUTO_INCREMENT,
   cargo VARCHAR(30) NOT NULL,
   salario FLOAT NOT NULL,
+
   CONSTRAINT uq_cargo UNIQUE (cargo),
   PRIMARY KEY(id_cargo)
 );
@@ -183,7 +184,7 @@ CREATE TABLE frota
     tipo_frota VARCHAR(20) NOT NULL,
     placa_frota CHAR(7) NOT NULL,
     cor_frota VARCHAR(20) NULL,
-    img_frota TEXT NOT NULL,
+    img_frota TEXT NULL,
 
     PRIMARY KEY (id_frota),
     CONSTRAINT uq_placa UNIQUE (placa_frota)
