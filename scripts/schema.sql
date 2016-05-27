@@ -260,7 +260,6 @@ CREATE TABLE viagem_servico
 
 );
 
-
 CREATE TABLE ordem_de_servico
 (
     id_os INT NOT NULL AUTO_INCREMENT,
@@ -298,4 +297,8 @@ FOR EACH ROW
 BEGIN
   INSERT INTO login VALUES(0,NEW.email_func,"0000",new.id_func);
 END$$
+
 DELIMITER ;
+
+system clear;
+SELECT "BASE DE DADOS GRAVADA COM SUCESSO 👏" as "CONCLUIDO 🍻";
