@@ -214,8 +214,8 @@ CREATE TABLE servico
 (
     id_servico INT NOT NULL AUTO_INCREMENT,
     tipo_servico VARCHAR(30) NOT NULL,
-    precoReal_servico FLOAT NOT NULL,
-    precoCobrado_servico FLOAT NOT NULL,
+    precoR_servico FLOAT NOT NULL,
+    precoC_servico FLOAT NOT NULL,
 
     PRIMARY KEY (id_servico)
 );
@@ -225,16 +225,16 @@ CREATE TABLE viagem
     id_viagem INT NOT NULL AUTO_INCREMENT,
     id_mot INT NOT NULL,
     id_frota INT NOT NULL,
-    localSaida_viagem VARCHAR(20) NOT NULL,
-    localChegada_viagem VARCHAR(20) NOT NULL,
-    enderecoSaida_viagem VARCHAR(30) NOT NULL,
-    enderecoChegada_viagem VARCHAR(30) NOT NULL,
-    numeroSaida_viagem VARCHAR(5) NULL,
-    numeroChegada_viagem VARCHAR(5) NULL,
-    cidadeSaida_viagem VARCHAR(20) NOT NULL,
-    cidadeChegada_viagem VARCHAR(20) NOT NULL,
-    ufSaida_viagem VARCHAR(2) NOT NULL,
-    ufChegada_viagem VARCHAR(2) NOT NULL,
+    locals_viagem VARCHAR(20) NOT NULL,
+    localc_viagem VARCHAR(20) NOT NULL,
+    enderecoS_viagem VARCHAR(30) NOT NULL,
+    enderecoC_viagem VARCHAR(30) NOT NULL,
+    numeroS_viagem VARCHAR(5) NULL,
+    numeroC_viagem VARCHAR(5) NULL,
+    cidadeS_viagem VARCHAR(20) NOT NULL,
+    cidadeC_viagem VARCHAR(20) NOT NULL,
+    ufS_viagem VARCHAR(2) NOT NULL,
+    ufC_viagem VARCHAR(2) NOT NULL,
     obs_viagem TEXT NULL,
 
     PRIMARY KEY (id_viagem),
