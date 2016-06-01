@@ -77,7 +77,7 @@ CREATE TABLE motorista
     id_mot INT NOT NULL AUTO_INCREMENT,
     id_func INT NOT NULL,
     #habilitacao
-    nome_hab INT(30) NOT NULL,
+    nome_hab VARCHAR(30) NOT NULL,
     idhab_hab INT(30) NOT NULL,
     nregistro_hab INT(12) NOT NULL,
     validade_hab DATE NOT NULL,
