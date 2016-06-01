@@ -26,10 +26,9 @@ INSERT INTO funcionario VALUES
 
 #Table MOTORISTA
 INSERT INTO motorista VALUES
-(0,"1","159357","122865","25413792","2018-10-20","Poupa Tempo SP","2016-01-01"),
-(0,"2","357951","9010235","1475365","2019-02-01","Poupa Tempo SP","2016-03-01"),
-(0,"3","214578","102529","0251481","2019-09-10","Poupa Tempo RJ","2016-02-13"),
-(0,"4","369174","383940","0123672","2016-10-11","Poupa Tempo MG","2016-01-08");
+(0,"4","Gabriel e Castro","122865","25413792","2018-10-20","Poupa Tempo SP","2016-01-01"),
+(0,"5","Anderson Panda","9010235","1475365","2019-02-01","Poupa Tempo SP","2016-03-01"),
+(0,"6","Miacci Daniel","102529","0251481","2019-09-10","Poupa Tempo RJ","2016-02-13");
 
 #Table SEGURO
 INSERT INTO seguro VALUES
