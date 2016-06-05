@@ -20,11 +20,7 @@ CREATE TABLE cliente
     img_cli TEXT NULL,
 
     PRIMARY KEY (id_cli),
-    CONSTRAINT ch_sx CHECK (sx_cli = "M" or "F"),
-    CONSTRAINT uq_cep UNIQUE (cep_cli),
-    CONSTRAINT uq_cpf UNIQUE (cpf_cli),
-    CONSTRAINT uq_telefone UNIQUE (telefone_cli),
-    CONSTRAINT uq_email UNIQUE (email_cli)
+    CONSTRAINT ch_sx CHECK (sx_cli = "M" or "F")
 );
 
 CREATE TABLE cargo
@@ -55,9 +51,6 @@ CREATE TABLE funcionario
     img_func TEXT NULL,
 
     PRIMARY KEY (id_func),
-    CONSTRAINT uq_cpf UNIQUE (cpf_func),
-    CONSTRAINT uq_email UNIQUE (email_func),
-    CONSTRAINT uq_tel UNIQUE (tel_func),
     CONSTRAINT ch_sx CHECK (sx_func = "M" or "F"),
     FOREIGN KEY (id_cargo) REFERENCES cargo(id_cargo)
 );
@@ -85,7 +78,6 @@ CREATE TABLE motorista
     dtemissao_hab DATE NOT NULL,
 
     PRIMARY KEY (id_mot),
-    CONSTRAINT uq_nregistro UNIQUE (nregistro_hab),
     FOREIGN KEY (id_func) REFERENCES funcionario(id_func)
 );
 
@@ -186,8 +178,7 @@ CREATE TABLE frota
     cor_frota VARCHAR(20) NULL,
     img_frota TEXT NULL,
 
-    PRIMARY KEY (id_frota),
-    CONSTRAINT uq_placa UNIQUE (placa_frota)
+    PRIMARY KEY (id_frota)
 );
 
 CREATE TABLE veiculo
@@ -201,8 +192,7 @@ CREATE TABLE veiculo
     cor_veiculo VARCHAR(10) NOT NULL,
 
     PRIMARY KEY (id_veiculo),
-    FOREIGN KEY (id_cli) REFERENCES cliente(id_cli),
-    CONSTRAINT uq_placa UNIQUE (placa_veiculo)
+    FOREIGN KEY (id_cli) REFERENCES cliente(id_cli)
 );
 
 CREATE TABLE sinistro
