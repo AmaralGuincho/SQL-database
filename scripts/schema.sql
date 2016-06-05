@@ -16,7 +16,7 @@ CREATE TABLE cliente
     dtnasc_cli DATE NOT NULL,
     cep_cli VARCHAR(21) NOT NULL,
     cid_cli VARCHAR(80) NOT NULL,
-    us_cli VARCHAR(2) NOT NULL
+    us_cli VARCHAR(2) NOT NULL,
     endereco_cli VARCHAR(50) NOT NULL,
     img_cli TEXT NULL,
 
