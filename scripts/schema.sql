@@ -17,7 +17,7 @@ CREATE TABLE cliente
     cep_cli VARCHAR(21) NOT NULL,
     bairro_cli VARCHAR(30) NOT NULL,
     cid_cli VARCHAR(80) NOT NULL,
-    us_cli VARCHAR(2) NOT NULL,
+    uf_cli VARCHAR(2) NOT NULL,
     endereco_cli VARCHAR(50) NOT NULL,
     img_cli TEXT NULL,
 
