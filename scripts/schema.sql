@@ -15,6 +15,7 @@ CREATE TABLE cliente
     telefone_cli CHAR(11) NOT NULL,
     dtnasc_cli DATE NOT NULL,
     cep_cli VARCHAR(21) NOT NULL,
+    bairro_cli VARCHAR(30) NOT NULL,
     cid_cli VARCHAR(80) NOT NULL,
     us_cli VARCHAR(2) NOT NULL,
     endereco_cli VARCHAR(50) NOT NULL,

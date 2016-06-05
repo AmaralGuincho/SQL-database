@@ -3,10 +3,10 @@ DELIMITER ;
 
 #Table CLIENTE
 INSERT INTO cliente VALUES
-(0,"Arthur","Oliveira","32721489620","Artur_1@gmail.com","M","9913001923","1994-06-11","13311032","SJCampos","SP","Rua Bacatuba, 23",null),
-(0,"Juan","Carlos","02154789610","Juan_2@hotmail.com","M","9913001923","1994-09-04","154255001","Jacarei","SP","Rua Bacatuba, 23",null),
-(0,"Melissa","Valentina","21458796210","Melissa_3@outlook.com","F","9913001923","1994-11-24","124225101","Sao Paulo","RJ","Rua Bacatuba, 23",null),
-(0,"Luiz","Marcelo","02145879650","Luiz_4@gmail.com","M","9913001923","1994-09-19","12211005","Cacapava","SP","Rua Bacatuba, 23",null);
+(0,"Arthur","Oliveira","32721489620","Artur_1@gmail.com","M","9913001923","1994-06-11","13311032","Novo Horizonte","SJCampos","SP","Rua Bacatuba, 23",null),
+(0,"Juan","Carlos","02154789610","Juan_2@hotmail.com","M","9913001923","1994-09-04","154255001","Novo Horizonte","Jacarei","SP","Rua Bacatuba, 23",null),
+(0,"Melissa","Valentina","21458796210","Melissa_3@outlook.com","F","9913001923","1994-11-24","124225101","Novo Horizonte","Sao Paulo","RJ","Rua Bacatuba, 23",null),
+(0,"Luiz","Marcelo","02145879650","Luiz_4@gmail.com","M","9913001923","1994-09-19","12211005","Novo Horizonte","Cacapava","SP","Rua Bacatuba, 23",null);
 
 #Table CARGO
 INSERT INTO cargo VALUES
