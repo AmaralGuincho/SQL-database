@@ -12,11 +12,12 @@ CREATE TABLE cliente
     cpf_cli VARCHAR(30) NOT NULL,
     email_cli VARCHAR(50) NULL,
     sx_cli CHAR(1) NOT NULL,
+    telefone_cli CHAR(11) NOT NULL,
     dtnasc_cli DATE NOT NULL,
     cep_cli VARCHAR(21) NOT NULL,
     cid_cli VARCHAR(80) NOT NULL,
-    us_cli VARCHAR(2) NOT NULL,
-    telefone_cli CHAR(11) NOT NULL,
+    us_cli VARCHAR(2) NOT NULL
+    endereco_cli VARCHAR(50) NOT NULL,
     img_cli TEXT NULL,
 
     PRIMARY KEY (id_cli),
