@@ -45,10 +45,10 @@ INSERT INTO frota VALUES
 
 #Table Veiculo
 INSERT INTO veiculo VALUES
-(0,"1","Hyundai","HB20","2014","asd1596","Prata"),
-(0,"2","Honda", "Civic","2015","enh0660","Branco"),
-(0,"3","Volkswagen"," GOL","2013","mjb4050","Preto"),
-(0,"4","Ford","FOCUS","2015","asw2147","Prata");
+(0,"1","Hyundai","HB20","2014","asd-1596","Prata"),
+(0,"2","Honda", "Civic","2015","enh-0660","Branco"),
+(0,"3","Volkswagen"," GOL","2013","mjb-4050","Preto"),
+(0,"4","Ford","FOCUS","2015","asw-2147","Prata");
 
 #Table Sinistro
 INSERT INTO sinistro VALUES

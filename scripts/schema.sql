@@ -192,7 +192,7 @@ CREATE TABLE veiculo
     fabricante_veiculo VARCHAR(20) NOT NULL,
     modelo_veiculo VARCHAR (30) NOT NULL,
     ano_veiculo VARCHAR(4) NOT NULL,
-    placa_veiculo VARCHAR(7) NOT NULL,
+    placa_veiculo VARCHAR(8) NOT NULL,
     cor_veiculo VARCHAR(10) NOT NULL,
 
     PRIMARY KEY (id_veiculo),
