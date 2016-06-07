@@ -48,6 +48,8 @@ CREATE TABLE funcionario
     sx_func VARCHAR(1) NOT NULL,
     tel_func VARCHAR(20) NOT NULL,
     email_func VARCHAR(30) NOT NULL,
+    residencia_func VARCHAR(30) NOT NULL,
+    bairro_func VARCHAR(30) NOT NULL,
     uf_func VARCHAR(2) NOT NULL,
     cid_func VARCHAR(80) NOT NULL,
     img_func TEXT NULL,

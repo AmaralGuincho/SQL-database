@@ -17,12 +17,12 @@ INSERT INTO cargo VALUES
 
 #Table FUNCIONARIO
 INSERT INTO funcionario VALUES
-(0,"1","Theofilo","Amaral","1980-06-16","12223609","12345678912","2000-06-10","m","12345678901","theo@amaralguincho.com","SP","Caraguatatuba",null),
-(0,"2","Jéssica","Amaral","1980-06-16","12223609","12345675912","2000-06-10","m","12345618901","jessica@amaralguincho.com","SP","Caraguatatuba",null),
-(0,"1","Paulo","Roberto Amaral","1980-06-16","12223609","12545678912","2000-06-10","m","12345678301","pauloRoberto@amaralguincho.com","SP","Caraguatatuba",null),
-(0,"3","Gabriel","Castro","1980-06-16","12223609","12345658912","2000-06-10","m","12345678921","gabriel@amaralguincho.com","SP","São José dos Campos",null),
-(0,"3","Anderson","Panda Guedes","1980-06-16","12223609","12345628912","2000-06-10","m","12345378921","pandaozika@amaralguincho.com","SP","São José dos Campos",null),
-(0,"3","Daniel","Miacci","1980-06-16","12223609","12345278912","2000-06-10","m","12345648921","miacci@amaralguincho.com","SP","São José dos Campos",null);
+(0,"1","Theofilo","Amaral","1980-06-16","12223609","12345678912","2000-06-10","m","12345678901","theo@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","Caraguatatuba",null),
+(0,"2","Jéssica","Amaral","1980-06-16","12223609","12345675912","2000-06-10","m","12345618901","jessica@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","Caraguatatuba",null),
+(0,"1","Paulo","Roberto Amaral","1980-06-16","12223609","12545678912","2000-06-10","m","12345678301","pauloRoberto@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","Caraguatatuba",null),
+(0,"3","Gabriel","Castro","1980-06-16","12223609","12345658912","2000-06-10","m","12345678921","gabriel@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","São José dos Campos",null),
+(0,"3","Anderson","Panda Guedes","1980-06-16","12223609","12345628912","2000-06-10","m","12345378921","pandaozika@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","São José dos Campos",null),
+(0,"3","Daniel","Miacci","1980-06-16","12223609","12345278912","2000-06-10","m","12345648921","miacci@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","São José dos Campos",null);
 
 #Table MOTORISTA
 INSERT INTO motorista VALUES
