@@ -225,14 +225,14 @@ CREATE TABLE servico
 CREATE TABLE viagem
 (
     id_viagem INT NOT NULL AUTO_INCREMENT,
-    id_mot INT NOT NULL,
-    id_frota INT NOT NULL,
+    id_mot INT NULL,
+    id_frota INT NULL,
     locals_viagem VARCHAR(20) NOT NULL,
     localc_viagem VARCHAR(20) NOT NULL,
     enderecoS_viagem VARCHAR(30) NOT NULL,
     enderecoC_viagem VARCHAR(30) NOT NULL,
-    numeroS_viagem VARCHAR(5) NULL,
-    numeroC_viagem VARCHAR(5) NULL,
+    numeroS_viagem VARCHAR(30) NULL,
+    numeroC_viagem VARCHAR(30) NULL,
     cidadeS_viagem VARCHAR(20) NOT NULL,
     cidadeC_viagem VARCHAR(20) NOT NULL,
     ufS_viagem VARCHAR(2) NOT NULL,
