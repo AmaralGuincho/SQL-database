@@ -175,10 +175,10 @@ CREATE TABLE frota
     id_frota INT NOT NULL AUTO_INCREMENT,
     nome_frota VARCHAR(30) NULL,
     modelo_frota VARCHAR(30) NULL,
-    ano_frota DATE NULL,
+    ano_frota VARCHAR(4) NULL,
     fabricante_frota VARCHAR(30) NULL,
     tipo_frota VARCHAR(20) NOT NULL,
-    placa_frota CHAR(7) NOT NULL,
+    placa_frota CHAR(8) NOT NULL,
     cor_frota VARCHAR(20) NULL,
     img_frota TEXT NULL,
 
@@ -191,7 +191,7 @@ CREATE TABLE veiculo
     id_cli INT NOT NULL,
     fabricante_veiculo VARCHAR(20) NOT NULL,
     modelo_veiculo VARCHAR (30) NOT NULL,
-    ano_veiculo DATE NOT NULL,
+    ano_veiculo VARCHAR(4) NOT NULL,
     placa_veiculo VARCHAR(7) NOT NULL,
     cor_veiculo VARCHAR(10) NOT NULL,
 

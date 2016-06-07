@@ -39,16 +39,16 @@ INSERT INTO seguro VALUES
 
 #Table FROTA
 INSERT INTO frota VALUES
-(0,"IVECO-Guincho","IVECO","2014-01-02","VEIGIN","Guincho","abc1234","Amarelo",null),
-(0,"Taxi","Honda Civic","2015-01-02","HONDA","Taxi","tax1666","Branco",null),
-(0,"IVECO-SOS-Guincho","IVECO","2014-08-01","VEIGIN","SOS","sos4004","Amarelo",null);
+(0,"IVECO-Guincho","IVECO","2014","VEIGIN","Guincho","abc1234","Amarelo",null),
+(0,"Taxi","Honda Civic","2015","HONDA","Taxi","tax1666","Branco",null),
+(0,"IVECO-SOS-Guincho","IVECO","2014","VEIGIN","SOS","sos4004","Amarelo",null);
 
 #Table Veiculo
 INSERT INTO veiculo VALUES
-(0,"1","Hyundai","HB20","2014-01-02","asd1596","Prata"),
-(0,"2","Honda", "Civic","2015-10-01","enh0660","Branco"),
-(0,"3","Volkswagen"," GOL","2013-04-03","mjb4050","Preto"),
-(0,"4","Ford","FOCUS","2015-02-03","asw2147","Prata");
+(0,"1","Hyundai","HB20","2014","asd1596","Prata"),
+(0,"2","Honda", "Civic","2015","enh0660","Branco"),
+(0,"3","Volkswagen"," GOL","2013","mjb4050","Preto"),
+(0,"4","Ford","FOCUS","2015","asw2147","Prata");
 
 #Table Sinistro
 INSERT INTO sinistro VALUES
