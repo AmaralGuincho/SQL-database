@@ -75,8 +75,8 @@ CREATE TABLE motorista
     id_func INT NOT NULL,
     #habilitacao
     nome_hab VARCHAR(30) NOT NULL,
-    idhab_hab INT(30) NOT NULL,
-    nregistro_hab INT(12) NOT NULL,
+    idhab_hab VARCHAR(80) NOT NULL,
+    nregistro_hab VARCHAR(80) NOT NULL,
     validade_hab DATE NOT NULL,
     local_hab VARCHAR(30) NOT NULL,
     dtemissao_hab DATE NOT NULL,
