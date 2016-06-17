@@ -87,85 +87,85 @@ CREATE TABLE motorista
 
 CREATE TABLE seguro
 (
-  id_seguro  INT NOT NULL AUTO_INCREMENT,
-  nome_seguro  VARCHAR(20) NOT NULL,
-  cod_prestador  VARCHAR(30) NOT NULL,
-  cep  VARCHAR(80) NOT NULL,
-  cgc  INT NOT NULL,
+  id_seguro INT NOT NULL AUTO_INCREMENT,
+  nome_seguro VARCHAR(20) NOT NULL,
+  cod_prestador  VARCHAR(30),
+  cep  VARCHAR(80),
+  cgc  INT,
  #LISTA DE TELEFONES
-  setor_cadastro_tel CHAR(11) NOT NULL,
-  setor_pagto_tel CHAR(11) NOT NULL,
-  fechamento_servicos_tel CHAR(11) NOT NULL,
-  casos_andamento_tel CHAR(11) NOT NULL,
+  setor_cadastro_tel VARCHAR(30),
+  setor_pagto_tel VARCHAR(30),
+  fechamento_servicos_tel VARCHAR(30),
+  casos_andamento_tel VARCHAR(30),
  #Cordenador
-  cordenador_regiao VARCHAR(45) NOT NULL,
+  cordenador_regiao VARCHAR(45),
  #Tabela de preco Reboque
  #Passeio
-  passeio_40km FLOAT NOT NULL,
-  passeio_maior40km FLOAT NOT NULL,
-  passeio_hora_trabalhada FLOAT NOT NULL,
-  passeio_hora_parada FLOAT NOT NULL,
+  passeio_40km FLOAT,
+  passeio_maior40km FLOAT,
+  passeio_hora_trabalhada FLOAT,
+  passeio_hora_parada FLOAT,
  #Ultilitario Lanca leve
-  ull_40km  FLOAT NOT NULL,
-  ull_maior40km  FLOAT NOT NULL,
-  ull_hora_trabalhada  FLOAT NOT NULL,
-  ull_hora_parada  FLOAT NOT NULL,
+  ull_40km FLOAT,
+  ull_maior40km FLOAT,
+  ull_hora_trabalhada FLOAT,
+  ull_hora_parada FLOAT,
  #Moto
-  moto_40km  FLOAT NOT NULL,
-  moto_maior40km  FLOAT NOT NULL,
-  moto_hora_trabalhada  FLOAT NOT NULL,
-  moto_hora_parada  FLOAT NOT NULL,
+  moto_40km FLOAT,
+  moto_maior40km FLOAT,
+  moto_hora_trabalhada FLOAT,
+  moto_hora_parada FLOAT,
  #Garagem
-  garagem_40km  FLOAT NOT NULL,
-  garagem_maior40km  FLOAT NOT NULL,
-  garagem_hora_trabalhada  FLOAT NOT NULL,
-  garagem_hora_parada  FLOAT NOT NULL,
+  garagem_40km FLOAT,
+  garagem_maior40km FLOAT,
+  garagem_hora_trabalhada FLOAT,
+  garagem_hora_parada FLOAT,
  #Rodas Extras
-  re_40km  FLOAT NOT NULL,
-  re_maior40km  FLOAT NOT NULL,
-  re_hora_trabalhada  FLOAT NOT NULL,
-  re_hora_parada  FLOAT NOT NULL,
+  re_40km FLOAT,
+  re_maior40km FLOAT,
+  re_hora_trabalhada FLOAT,
+  re_hora_parada FLOAT,
  #Patins
-  patins_40km  FLOAT NOT NULL,
-  patins_maior40km  FLOAT NOT NULL,
-  patins_hora_trabalhada  FLOAT NOT NULL,
-  patins_hora_parada  FLOAT NOT NULL,
+  patins_40km FLOAT,
+  patins_maior40km FLOAT,
+  patins_hora_trabalhada FLOAT,
+  patins_hora_parada FLOAT,
  #cam/leve
-  cl_40km  FLOAT NOT NULL,
-  cl_maior40km  FLOAT NOT NULL,
-  cl_hora_trabalhada  FLOAT NOT NULL,
-  cl_hora_parada  FLOAT NOT NULL,
+  cl_40km FLOAT,
+  cl_maior40km FLOAT,
+  cl_hora_trabalhada FLOAT,
+  cl_hora_parada FLOAT,
  #SOS Pesado
-  sospsd_40km  FLOAT NOT NULL,
-  sospsd_maior40km  FLOAT NOT NULL,
-  sospsd_hora_trabalhada  FLOAT NOT NULL,
-  sospsd_hora_parada  FLOAT NOT NULL,
+  sospsd_40km FLOAT,
+  sospsd_maior40km FLOAT,
+  sospsd_hora_trabalhada FLOAT,
+  sospsd_hora_parada FLOAT,
  #Extra Pesado
-  xtrpsd_40km  FLOAT NOT NULL,
-  xtrpsd_maior40km  FLOAT NOT NULL,
-  xtrpsd_hora_trabalhada  FLOAT NOT NULL,
-  xtrpsd_hora_parada  FLOAT NOT NULL,
+  xtrpsd_40km FLOAT,
+  xtrpsd_maior40km FLOAT,
+  xtrpsd_hora_trabalhada FLOAT,
+  xtrpsd_hora_parada FLOAT,
  #Socorro Mecanico
-  scrmec_40km  float NOT NULL,
-  scrmec_mais40km  float NOT NULL,
+  scrmec_40km FLOAT,
+  scrmec_mais40km FLOAT,
  #Taxi
-  km_rodado  float NOT NULL,
-  km_parado  float NOT NULL,
+  km_rodado FLOAT,
+  km_parado FLOAT,
  #Abertura Chaveiro
-  saida_nacional_40km  FLOAT NOT NULL,
-  saida_nacional_mais40km  FLOAT NOT NULL,
-  saida_importado_40km  FLOAT NOT NULL,
-  saida_importado_mais40km  FLOAT NOT NULL,
-  saida_confeccao_40km  FLOAT NOT NULL,
-  saida_confeccao_mais40km  FLOAT NOT NULL,
+  saida_nacional_40km FLOAT,
+  saida_nacional_mais40km FLOAT,
+  saida_importado_40km FLOAT,
+  saida_importado_mais40km FLOAT,
+  saida_confeccao_40km FLOAT,
+  saida_confeccao_mais40km FLOAT,
  #Residencia
-  saida_40km  FLOAT NOT NULL,
-  saida_mais40km  FLOAT NOT NULL,
-  saida_hora_trabalhada FLOAT NOT NULL,
+  saida_40km FLOAT,
+  saida_mais40km FLOAT,
+  saida_hora_trabalhada FLOAT,
  #Vigilante
-  vigilante_40km  FLOAT NOT NULL,
-  vigilante_mais40km  FLOAT NOT NULL,
-  vigilante_hora_trabalhada FLOAT NOT NULL,
+  vigilante_40km FLOAT,
+  vigilante_mais40km FLOAT,
+  vigilante_hora_trabalhada FLOAT,
 
   PRIMARY KEY (id_seguro)
 );
@@ -203,9 +203,9 @@ CREATE TABLE sinistro
 (
     id_sinistro INT NOT NULL AUTO_INCREMENT,
     sinistro INT NOT NULL,
-    id_cli INT NOT NULL,
+    id_cli INT NULL,
     id_seguro INT NULL,
-    tipo_seguro VARCHAR(20) NOT NULL,
+    tipo_seguro VARCHAR(20) NULL,
 
     PRIMARY KEY (id_sinistro),
     FOREIGN KEY (id_cli) REFERENCES cliente(id_cli),
@@ -235,8 +235,8 @@ CREATE TABLE viagem
     numeroC_viagem VARCHAR(30) NULL,
     cidadeS_viagem VARCHAR(20) NULL,
     cidadeC_viagem VARCHAR(20) NULL,
-    ufS_viagem VARCHAR(2) NOT NULL,
-    ufC_viagem VARCHAR(2) NOT NULL,
+    ufS_viagem VARCHAR(2) NULL,
+    ufC_viagem VARCHAR(2) NULL,
     obs_viagem TEXT NULL,
 
     PRIMARY KEY (id_viagem),
@@ -247,11 +247,11 @@ CREATE TABLE viagem
 CREATE TABLE viagem_servico
 (
     id_viagem INT NOT NULL AUTO_INCREMENT,
-    id_servico INT NOT NULL,
+    id_os INT NOT NULL,
 
-    PRIMARY KEY (id_viagem, id_servico),
+    PRIMARY KEY (id_viagem, id_os),
     FOREIGN KEY (id_viagem) REFERENCES viagem(id_viagem),
-    FOREIGN KEY (id_servico) REFERENCES servico(id_servico)
+    FOREIGN KEY (id_os) REFERENCES ordem_de_servico(id_os)
 
 );
 
