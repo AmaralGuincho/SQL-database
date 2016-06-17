@@ -244,6 +244,20 @@ CREATE TABLE viagem
     FOREIGN KEY (id_frota) REFERENCES frota (id_frota)
 );
 
+CREATE TABLE ordem_de_servico
+(
+    id_os INT NOT NULL AUTO_INCREMENT,
+    id_func INT NOT NULL,
+    id_veiculo INT NOT NULL,
+    dtab_os DATETIME NOT NULL,
+    agendamento_os DATETIME NULL,
+    status_os VARCHAR(20) NOT NULL,
+
+    PRIMARY KEY (id_os),
+    FOREIGN KEY (id_func) REFERENCES funcionario(id_func),
+    FOREIGN KEY (id_veiculo) REFERENCES veiculo(id_veiculo)
+);
+
 CREATE TABLE viagem_servico
 (
     id_viagem INT NOT NULL AUTO_INCREMENT,
@@ -252,21 +266,6 @@ CREATE TABLE viagem_servico
     PRIMARY KEY (id_viagem, id_os),
     FOREIGN KEY (id_viagem) REFERENCES viagem(id_viagem),
     FOREIGN KEY (id_os) REFERENCES ordem_de_servico(id_os)
-
-);
-
-CREATE TABLE ordem_de_servico
-(
-    id_os INT NOT NULL AUTO_INCREMENT,
-    id_func INT NOT NULL,
-    id_veiculo INT NOT NULL,
-    dtab_os DATETIME NOT NULL,
-    agendamento_os VARCHAR(100) NULL,
-    status_os VARCHAR(20) NOT NULL,
-
-    PRIMARY KEY (id_os),
-    FOREIGN KEY (id_func) REFERENCES funcionario(id_func),
-    FOREIGN KEY (id_veiculo) REFERENCES veiculo(id_veiculo)
 );
 
 CREATE TABLE servico_os
@@ -294,6 +293,8 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+-- TODO root User
 
 system clear;
 SELECT "BASE DE DADOS GRAVADA COM SUCESSO 👏" as "CONCLUIDO 🍻";
