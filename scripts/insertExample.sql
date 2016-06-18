@@ -66,21 +66,21 @@ INSERT INTO servico VALUES
 
 #Table Viagem
 INSERT INTO viagem VALUES
- (0,"1","3","SJCampos","Jacarei","Bosque dos Eucaliptos","Vila Branca","24","25","SJCampos","Jacarei","SP","SP","xxx"),
-(0,"1","3","Jacarei","SJCampos","Vila Branca","Jardim Bela Vista","101","205","Jacarei","SJCampos","SP","SP","xxx"),
-(0,"1","2","Belo Horizonte","SJCampos","Rua José de Assis","Avenida Cidade Jardim","262","262","Belo Horizonte","SJCampos","MG","SP","xxx");
+(0,"1","3","SJCampos","Jacarei","Bosque dos Eucaliptos","Vila Branca","SJCampos","Jacarei","SP","SP","xxx"),
+(0,"1","3","Jacarei","SJCampos","Vila Branca","Jardim Bela Vista","Jacarei","SJCampos","SP","SP","xxx"),
+(0,"1","2","Belo Horizonte","SJCampos","Rua José de Assis","Avenida Cidade Jardim","Belo Horizonte","SJCampos","MG","SP","xxx");
+
+#Table Ordem de Serviço
+INSERT INTO ordem_de_servico VALUES
+(0,"1","4","2016-04-14",null,"Aberto"),
+(0,"2","3","2016-02-01",null,"Fechado"),
+(0,"3","2","2016-02-03",null,"Rejeitado");
 
 #Table Viagem_Serviço
 INSERT INTO viagem_servico VALUES
 (0,1),
 (0,2),
 (0,3);
-
-#Table Ordem de Serviço
-INSERT INTO ordem_de_servico VALUES
-(0,"1","4","2016-04-14","xxx","Aberto"),
-(0,"2","3","2016-02-01","xxx","Fechado"),
-(0,"3","2","2016-02-03","xxx","Rejeitado");
 
 #Table servico_os
 INSERT INTO servico_os VALUES
