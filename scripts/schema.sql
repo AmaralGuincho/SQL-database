@@ -8,7 +8,7 @@ CREATE TABLE cliente
 (
     id_cli INT NOT NULL AUTO_INCREMENT,
     nome_cli VARCHAR(20) NOT NULL,
-    sobrenome_cli VARCHAR (50) NULL,
+    sobrenome_cli VARCHAR(90) NULL,
     cpf_cli VARCHAR(30) NULL,
     email_cli VARCHAR(50) NULL,
     sx_cli CHAR(1) NULL,
@@ -268,14 +268,16 @@ CREATE TABLE viagem_servico
 
 CREATE TABLE servico_os
 (
-    id_os INT NOT NULL AUTO_INCREMENT,
+    id_os INT NOT NULL,
     id_servico INT NOT NULL,
     id_sinistro INT NOT NULL,
+    id_seguro INT NOT NULL,
 
-    PRIMARY KEY(id_os, id_servico),
+    PRIMARY KEY(id_os, id_servico, id_sinistro, id_seguro),
     FOREIGN KEY (id_os) REFERENCES ordem_de_servico(id_os),
     FOREIGN KEY (id_servico) REFERENCES servico(id_servico),
-    FOREIGN KEY (id_sinistro) REFERENCES sinistro(id_sinistro)
+    FOREIGN KEY (id_sinistro) REFERENCES sinistro(id_sinistro),
+    FOREIGN KEY (id_seguro) REFERENCES seguro(id_seguro)
 );
 
 # TRIGGERS AND PROCEDURES
