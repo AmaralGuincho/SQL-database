@@ -189,11 +189,11 @@ CREATE TABLE veiculo
 (
     id_veiculo INT NOT NULL AUTO_INCREMENT,
     id_cli INT NOT NULL,
-    fabricante_veiculo VARCHAR(20) NOT NULL,
-    modelo_veiculo VARCHAR (30) NOT NULL,
-    ano_veiculo VARCHAR(4) NOT NULL,
-    placa_veiculo VARCHAR(8) NOT NULL,
-    cor_veiculo VARCHAR(10) NOT NULL,
+    fabricante_veiculo VARCHAR(20) NULL,
+    modelo_veiculo VARCHAR (30) NULL,
+    ano_veiculo VARCHAR(4) NULL,
+    placa_veiculo VARCHAR(8) NULL,
+    cor_veiculo VARCHAR(10) NULL,
 
     PRIMARY KEY (id_veiculo),
     FOREIGN KEY (id_cli) REFERENCES cliente(id_cli)
@@ -202,7 +202,7 @@ CREATE TABLE veiculo
 CREATE TABLE sinistro
 (
     id_sinistro INT NOT NULL AUTO_INCREMENT,
-    sinistro INT NOT NULL,
+    sinistro VARCHAR(30) NOT NULL,
     id_cli INT NULL,
     id_seguro INT NULL,
     tipo_seguro VARCHAR(20) NULL,
