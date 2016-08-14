@@ -88,20 +88,20 @@ CREATE TABLE motorista
 CREATE TABLE seguro
 (
   id_seguro INT NOT NULL AUTO_INCREMENT,
-  nome_seguro VARCHAR(50) NOT NULL,
-  nome_amigavel VARCHAR(20) NOT NULL,
+  nome_seguro VARCHAR(50) NULL,
+  nome_amigavel VARCHAR(20) NULL,
   codigo_prestador VARCHAR(30) NULL,
-  cgc INT,
+  cgc INT NULL,
   endereco VARCHAR(30) NULL,
  #Cordenador
   cordenador_regiao VARCHAR(45) NULL,
  #Email representante
-  email_representante NULL VARCHAR(40),
+  email_representante VARCHAR(40) NULL,
  #LISTA DE TELEFONES
-  setor_cadastro_tel VARCHAR(30),
-  setor_pagamento_tel VARCHAR(30),
-  fechamento_servicos_tel VARCHAR(30),
-  casos_andamento_tel VARCHAR(30),
+  setor_cadastro_tel VARCHAR(30) NULL,
+  setor_pagamento_tel VARCHAR(30) NULL,
+  fechamento_servicos_tel VARCHAR(30) NULL,
+  casos_andamento_tel VARCHAR(30) NULL,
  #Tabela de preco Reboque
  #Passeio
   passeio_40km FLOAT NULL,
