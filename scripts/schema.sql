@@ -1,15 +1,3 @@
-DROP DATABASE IF EXISTS amaralguincho;
-
-CREATE DATABASE amaralguincho;
-
-USE amaralguincho;
-
--- MySQL dump 10.13  Distrib 5.7.15, for osx10.12 (x86_64)
---
--- Host: amaralguincho.mysql.uhserver.com    Database: amaralguincho
--- ------------------------------------------------------
--- Server version	5.6.22
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -24,16 +12,18 @@ USE amaralguincho;
 --
 -- Table structure for table `cargo`
 --
+DROP DATABASE IF EXISTS amaralguincho;
+CREATE DATABASE amaralguincho;
+use amaralguincho;
 
 DROP TABLE IF EXISTS `cargo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cargo` (
-  `id_cargo` BIGINT NOT NULL AUTO_INCREMENT,
-  `cargo` TEXT  NOT NULL,
-  `salario` TEXT NOT NULL,
-  PRIMARY KEY (`id_cargo`),
-  UNIQUE KEY `uq_cargo` (`cargo`)
+`id_cargo` bigint NOT NULL AUTO_INCREMENT,
+`cargo` text NULL,
+`salario` text NOT NULL,
+PRIMARY KEY (`id_cargo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,32 +45,23 @@ DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cliente` (
-  `id_cli` BIGINT NOT NULL AUTO_INCREMENT,
-  `nome_cli` TEXT  NOT NULL,
-  `sobrenome_cli` TEXT  DEFAULT NULL,
-  `cpf_cli` TEXT  DEFAULT NULL,
-  `email_cli` TEXT  DEFAULT NULL,
-  `sx_cli` TEXT DEFAULT NULL,
-  `telefone_cli` TEXT  DEFAULT NULL,
-  `dtnasc_cli`  DEFAULT NULL,
-  `cep_cli` TEXT  DEFAULT NULL,
-  `bairro_cli` TEXT  DEFAULT NULL,
-  `cid_cli` TEXT  DEFAULT NULL,
-  `uf_cli` TEXT DEFAULT NULL,
-  `endereco_cli` TEXT  DEFAULT NULL,
-  `img_cli` text,
-  PRIMARY KEY (`id_cli`)
+`id_cli` bigint NOT NULL AUTO_INCREMENT,
+`nome_cli` text NULL,
+`sobrenome_cli` text NULL,
+`cpf_cli` text NULL,
+`email_cli` text NULL,
+`sx_cli` text DEFAULT NULL,
+`telefone_cli` text NULL,
+`dtnasc_cli` text NULL,
+`cep_cli` text NULL,
+`bairro_cli` text NULL,
+`cid_cli` text NULL,
+`uf_cli` text NULL,
+`endereco_cli` text NULL,
+`img_cli` text,
+PRIMARY KEY (`id_cli`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cliente`
---
-
-LOCK TABLES `cliente` WRITE;
-/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `frota`
@@ -90,27 +71,18 @@ DROP TABLE IF EXISTS `frota`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `frota` (
-  `id_frota` BIGINT NOT NULL AUTO_INCREMENT,
-  `nome_frota` TEXT  DEFAULT NULL,
-  `modelo_frota` TEXT  DEFAULT NULL,
-  `ano_frota` TEXT DEFAULT NULL,
-  `fabricante_frota` TEXT  DEFAULT NULL,
-  `tipo_frota` TEXT  NOT NULL,
-  `placa_frota` TEXT NOT NULL,
-  `cor_frota` TEXT  DEFAULT NULL,
-  `img_frota` text,
-  PRIMARY KEY (`id_frota`)
+`id_frota` bigint NOT NULL AUTO_INCREMENT,
+`nome_frota` text NULL,
+`modelo_frota` text NULL,
+`ano_frota` text NULL,
+`fabricante_frota` text NULL,
+`tipo_frota` text NULL,
+`placa_frota` text NOT NULL,
+`cor_frota` text NULL,
+`img_frota` text,
+PRIMARY KEY (`id_frota`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `frota`
---
-
-LOCK TABLES `frota` WRITE;
-/*!40000 ALTER TABLE `frota` DISABLE KEYS */;
-/*!40000 ALTER TABLE `frota` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `funcionario`
@@ -120,37 +92,28 @@ DROP TABLE IF EXISTS `funcionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `funcionario` (
-  `id_func` BIGINT NOT NULL AUTO_INCREMENT,
-  `id_cargo` BIGINT NOT NULL,
-  `nome_func` TEXT  NOT NULL,
-  `sobrenome_func` TEXT  DEFAULT NULL,
-  `dtnasc_func` TEXT DEFAULT NULL,
-  `cep_func` TEXT  DEFAULT NULL,
-  `cpf_func` TEXT  DEFAULT NULL,
-  `dtcont_func` TEXT DEFAULT NULL,
-  `sx_func` TEXT DEFAULT NULL,
-  `tel_func` TEXT  DEFAULT NULL,
-  `email_func` text,
-  `residencia_func` TEXT  DEFAULT NULL,
-  `bairro_func` TEXT  DEFAULT NULL,
-  `uf_func` TEXT DEFAULT NULL,
-  `cid_func` TEXT  DEFAULT NULL,
-  `img_func` text,
-  PRIMARY KEY (`id_func`),
-  KEY `id_cargo` (`id_cargo`),
-  CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `cargo` (`id_cargo`)
+`id_func` bigint NOT NULL AUTO_INCREMENT,
+`id_cargo` bigint NOT NULL,
+`nome_func` text NULL,
+`sobrenome_func` text NULL,
+`dtnasc_func` text NULL,
+`cep_func` text NULL,
+`cpf_func` text NULL,
+`dtcont_func` text NULL,
+`sx_func` text NULL,
+`tel_func` text NULL,
+`email_func` text,
+`residencia_func` text NULL,
+`bairro_func` text NULL,
+`uf_func` text NULL,
+`cid_func` text NULL,
+`img_func` text,
+PRIMARY KEY (`id_func`),
+KEY `id_cargo` (`id_cargo`),
+CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `cargo` (`id_cargo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `funcionario`
---
-
-LOCK TABLES `funcionario` WRITE;
-/*!40000 ALTER TABLE `funcionario` DISABLE KEYS */;
-INSERT INTO `funcionario` VALUES (1,1,'root',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'root@ag.com',NULL,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `funcionario` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -161,10 +124,10 @@ UNLOCK TABLES;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`amaralwebmaster`@`%`*/ /*!50003 TRIGGER defaultLogin
-  AFTER INSERT ON funcionario
+AFTER INSERT ON funcionario
 FOR EACH ROW
 BEGIN
-  INSERT INTO login VALUES(0,NEW.email_func,"0000",new.id_func);
+INSERT INTO login VALUES(0,NEW.email_func,"0000",new.id_func);
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -180,25 +143,15 @@ DROP TABLE IF EXISTS `login`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `login` (
-  `id_login` BIGINT NOT NULL AUTO_INCREMENT,
-  `username_login` TEXT  NOT NULL,
-  `password_login` TEXT  NOT NULL,
-  `id_func` BIGINT NOT NULL,
-  PRIMARY KEY (`id_login`),
-  KEY `id_func` (`id_func`),
-  CONSTRAINT `login_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`)
+`id_login` bigint NOT NULL AUTO_INCREMENT,
+`username_login` text NULL,
+`password_login` text NULL,
+`id_func` bigint NOT NULL,
+PRIMARY KEY (`id_login`),
+KEY `id_func` (`id_func`),
+CONSTRAINT `login_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `login`
---
-
-LOCK TABLES `login` WRITE;
-/*!40000 ALTER TABLE `login` DISABLE KEYS */;
-INSERT INTO `login` VALUES (1,'root@ag','senha',1);
-/*!40000 ALTER TABLE `login` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `motorista`
@@ -208,28 +161,19 @@ DROP TABLE IF EXISTS `motorista`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `motorista` (
-  `id_mot` BIGINT NOT NULL AUTO_INCREMENT,
-  `id_func` BIGINT NOT NULL,
-  `nome_hab` TEXT  NOT NULL,
-  `idhab_hab` TEXT  NOT NULL,
-  `nregistro_hab` TEXT  NOT NULL,
-  `validade_hab` TEXT NOT NULL,
-  `local_hab` TEXT  NOT NULL,
-  `dtemissao_hab` TEXT NOT NULL,
-  PRIMARY KEY (`id_mot`),
-  KEY `id_func` (`id_func`),
-  CONSTRAINT `motorista_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`)
+`id_mot` bigint NOT NULL AUTO_INCREMENT,
+`id_func` bigint NOT NULL,
+`nome_hab` text NULL,
+`idhab_hab` text NULL,
+`nregistro_hab` text NULL,
+`validade_hab` date NOT NULL,
+`local_hab` text NULL,
+`dtemissao_hab` date NOT NULL,
+PRIMARY KEY (`id_mot`),
+KEY `id_func` (`id_func`),
+CONSTRAINT `motorista_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `motorista`
---
-
-LOCK TABLES `motorista` WRITE;
-/*!40000 ALTER TABLE `motorista` DISABLE KEYS */;
-/*!40000 ALTER TABLE `motorista` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Temporary view structure for view `motoristaOnly`
@@ -240,12 +184,12 @@ DROP TABLE IF EXISTS `motoristaOnly`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE VIEW `motoristaOnly` AS SELECT
- 1 AS `id_func`,
- 1 AS `nome_func`,
- 1 AS `sobrenome_func`,
- 1 AS `img_func`,
- 1 AS `tel_func`,
- 1 AS `id_mot`*/;
+1 AS `id_func`,
+1 AS `nome_func`,
+1 AS `sobrenome_func`,
+1 AS `img_func`,
+1 AS `tel_func`,
+1 AS `id_mot`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -256,28 +200,19 @@ DROP TABLE IF EXISTS `ordem_de_servico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ordem_de_servico` (
-  `id_os` BIGINT NOT NULL AUTO_INCREMENT,
-  `id_func` BIGINT NOT NULL,
-  `id_veiculo` BIGINT NOT NULL,
-  `dtab_os` TEXT NOT NULL,
-  `agendamento_os` TEXT DEFAULT NULL,
-  `status_os` TEXT  NOT NULL,
-  PRIMARY KEY (`id_os`),
-  KEY `id_func` (`id_func`),
-  KEY `id_veiculo` (`id_veiculo`),
-  CONSTRAINT `ordem_de_servico_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`),
-  CONSTRAINT `ordem_de_servico_ibfk_2` FOREIGN KEY (`id_veiculo`) REFERENCES `veiculo` (`id_veiculo`)
+`id_os` bigint NOT NULL AUTO_INCREMENT,
+`id_func` bigint NOT NULL,
+`id_veiculo` bigint NOT NULL,
+`dtab_os` datetime NOT NULL,
+`agendamento_os` datetime DEFAULT NULL,
+`status_os` text NULL,
+PRIMARY KEY (`id_os`),
+KEY `id_func` (`id_func`),
+KEY `id_veiculo` (`id_veiculo`),
+CONSTRAINT `ordem_de_servico_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`),
+CONSTRAINT `ordem_de_servico_ibfk_2` FOREIGN KEY (`id_veiculo`) REFERENCES `veiculo` (`id_veiculo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ordem_de_servico`
---
-
-LOCK TABLES `ordem_de_servico` WRITE;
-/*!40000 ALTER TABLE `ordem_de_servico` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ordem_de_servico` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `seguro`
@@ -287,83 +222,73 @@ DROP TABLE IF EXISTS `seguro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `seguro` (
-  `id_seguro` BIGINT NOT NULL AUTO_INCREMENT,
-  `nome_seguro` TEXT  DEFAULT NULL,
-  `nome_amigavel` TEXT  DEFAULT NULL,
-  `codigo_prestador` TEXT  DEFAULT NULL,
-  `cgc` BIGINT DEFAULT NULL,
-  `endereco` TEXT  DEFAULT NULL,
-  `cordenador_regiao` TEXT  DEFAULT NULL,
-  `email_representante` text,
-  `setor_cadastro_tel` TEXT  DEFAULT NULL,
-  `setor_pagamento_tel` TEXT  DEFAULT NULL,
-  `fechamento_servicos_tel` TEXT  DEFAULT NULL,
-  `casos_andamento_tel` TEXT  DEFAULT NULL,
-  `passeio_40km` TEXT DEFAULT NULL,
-  `passeio_maior40km` TEXT DEFAULT NULL,
-  `passeio_hora_trabalhada` TEXT DEFAULT NULL,
-  `passeio_hora_parada` TEXT DEFAULT NULL,
-  `ull_40km` TEXT DEFAULT NULL,
-  `ull_maior40km` TEXT DEFAULT NULL,
-  `ull_hora_trabalhada` TEXT DEFAULT NULL,
-  `ull_hora_parada` TEXT DEFAULT NULL,
-  `moto_40km` TEXT DEFAULT NULL,
-  `moto_maior40km` TEXT DEFAULT NULL,
-  `moto_hora_trabalhada` TEXT DEFAULT NULL,
-  `moto_hora_parada` TEXT DEFAULT NULL,
-  `garagem_40km` TEXT DEFAULT NULL,
-  `garagem_maior40km` TEXT DEFAULT NULL,
-  `garagem_hora_trabalhada` TEXT DEFAULT NULL,
-  `garagem_hora_parada` TEXT DEFAULT NULL,
-  `re_40km` TEXT DEFAULT NULL,
-  `re_maior40km` TEXT DEFAULT NULL,
-  `re_hora_trabalhada` TEXT DEFAULT NULL,
-  `re_hora_parada` TEXT DEFAULT NULL,
-  `patins_40km` TEXT DEFAULT NULL,
-  `patins_maior40km` TEXT DEFAULT NULL,
-  `patins_hora_trabalhada` TEXT DEFAULT NULL,
-  `patins_hora_parada` TEXT DEFAULT NULL,
-  `cl_40km` TEXT DEFAULT NULL,
-  `cl_maior40km` TEXT DEFAULT NULL,
-  `cl_hora_trabalhada` TEXT DEFAULT NULL,
-  `cl_hora_parada` TEXT DEFAULT NULL,
-  `sospsd_40km` TEXT DEFAULT NULL,
-  `sospsd_maior40km` TEXT DEFAULT NULL,
-  `sospsd_hora_trabalhada` TEXT DEFAULT NULL,
-  `sospsd_hora_parada` TEXT DEFAULT NULL,
-  `xtrpsd_40km` TEXT DEFAULT NULL,
-  `xtrpsd_maior40km` TEXT DEFAULT NULL,
-  `xtrpsd_hora_trabalhada` TEXT DEFAULT NULL,
-  `xtrpsd_hora_parada` TEXT DEFAULT NULL,
-  `scrmec_40km` TEXT DEFAULT NULL,
-  `scrmec_mais40km` TEXT DEFAULT NULL,
-  `km_rodado` TEXT DEFAULT NULL,
-  `km_parado` TEXT DEFAULT NULL,
-  `saida_nacional_40km` TEXT DEFAULT NULL,
-  `saida_nacional_mais40km` TEXT DEFAULT NULL,
-  `saida_importado_40km` TEXT DEFAULT NULL,
-  `saida_importado_mais40km` TEXT DEFAULT NULL,
-  `saida_confeccao_40km` TEXT DEFAULT NULL,
-  `saida_confeccao_mais40km` TEXT DEFAULT NULL,
-  `saida_40km` TEXT DEFAULT NULL,
-  `saida_mais40km` TEXT DEFAULT NULL,
-  `saida_hora_trabalhada` TEXT DEFAULT NULL,
-  `vigilante_40km` TEXT DEFAULT NULL,
-  `vigilante_mais40km` TEXT DEFAULT NULL,
-  `vigilante_hora_trabalhada` TEXT DEFAULT NULL,
-  PRIMARY KEY (`id_seguro`)
+`id_seguro` bigint NOT NULL AUTO_INCREMENT,
+`nome_seguro` text NULL,
+`nome_amigavel` text NULL,
+`codigo_prestador` text NULL,
+`cgc` bigint DEFAULT NULL,
+`endereco` text NULL,
+`cordenador_regiao` text NULL,
+`email_representante` text,
+`setor_cadastro_tel` text NULL,
+`setor_pagamento_tel` text NULL,
+`fechamento_servicos_tel` text NULL,
+`casos_andamento_tel` text NULL,
+`passeio_40km` text NULL,
+`passeio_maior40km` text NULL,
+`passeio_hora_trabalhada` text NULL,
+`passeio_hora_parada` text NULL,
+`ull_40km` text NULL,
+`ull_maior40km` text NULL,
+`ull_hora_trabalhada` text NULL,
+`ull_hora_parada` text NULL,
+`moto_40km` text NULL,
+`moto_maior40km` text NULL,
+`moto_hora_trabalhada` text NULL,
+`moto_hora_parada` text NULL,
+`garagem_40km` text NULL,
+`garagem_maior40km` text NULL,
+`garagem_hora_trabalhada` text NULL,
+`garagem_hora_parada` text NULL,
+`re_40km` text NULL,
+`re_maior40km` text NULL,
+`re_hora_trabalhada` text NULL,
+`re_hora_parada` text NULL,
+`patins_40km` text NULL,
+`patins_maior40km` text NULL,
+`patins_hora_trabalhada` text NULL,
+`patins_hora_parada` text NULL,
+`cl_40km` text NULL,
+`cl_maior40km` text NULL,
+`cl_hora_trabalhada` text NULL,
+`cl_hora_parada` text NULL,
+`sospsd_40km` text NULL,
+`sospsd_maior40km` text NULL,
+`sospsd_hora_trabalhada` text NULL,
+`sospsd_hora_parada` text NULL,
+`xtrpsd_40km` text NULL,
+`xtrpsd_maior40km` text NULL,
+`xtrpsd_hora_trabalhada` text NULL,
+`xtrpsd_hora_parada` text NULL,
+`scrmec_40km` text NULL,
+`scrmec_mais40km` text NULL,
+`km_rodado` text NULL,
+`km_parado` text NULL,
+`saida_nacional_40km` text NULL,
+`saida_nacional_mais40km` text NULL,
+`saida_importado_40km` text NULL,
+`saida_importado_mais40km` text NULL,
+`saida_confeccao_40km` text NULL,
+`saida_confeccao_mais40km` text NULL,
+`saida_40km` text NULL,
+`saida_mais40km` text NULL,
+`saida_hora_trabalhada` text NULL,
+`vigilante_40km` text NULL,
+`vigilante_mais40km` text NULL,
+`vigilante_hora_trabalhada` text NULL,
+PRIMARY KEY (`id_seguro`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `seguro`
---
-
-LOCK TABLES `seguro` WRITE;
-/*!40000 ALTER TABLE `seguro` DISABLE KEYS */;
-INSERT INTO `seguro` VALUES (1,'Seguradora',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `seguro` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `servico`
@@ -373,22 +298,13 @@ DROP TABLE IF EXISTS `servico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `servico` (
-  `id_servico` BIGINT NOT NULL AUTO_INCREMENT,
-  `tipo_servico` TEXT  NOT NULL,
-  `precoR_servico` TEXT NOT NULL,
-  `precoC_servico` TEXT NOT NULL,
-  PRIMARY KEY (`id_servico`)
+`id_servico` bigint NOT NULL AUTO_INCREMENT,
+`tipo_servico` text NULL,
+`precoR_servico` text NOT NULL,
+`precoC_servico` text NOT NULL,
+PRIMARY KEY (`id_servico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `servico`
---
-
-LOCK TABLES `servico` WRITE;
-/*!40000 ALTER TABLE `servico` DISABLE KEYS */;
-/*!40000 ALTER TABLE `servico` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `servico_os`
@@ -398,29 +314,20 @@ DROP TABLE IF EXISTS `servico_os`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `servico_os` (
-  `id_os` BIGINT NOT NULL,
-  `id_servico` BIGINT NOT NULL,
-  `id_sinistro` BIGINT NOT NULL,
-  `id_seguro` BIGINT NOT NULL,
-  PRIMARY KEY (`id_os`,`id_servico`,`id_sinistro`,`id_seguro`),
-  KEY `id_servico` (`id_servico`),
-  KEY `id_sinistro` (`id_sinistro`),
-  KEY `id_seguro` (`id_seguro`),
-  CONSTRAINT `servico_os_ibfk_1` FOREIGN KEY (`id_os`) REFERENCES `ordem_de_servico` (`id_os`),
-  CONSTRAINT `servico_os_ibfk_2` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`),
-  CONSTRAINT `servico_os_ibfk_3` FOREIGN KEY (`id_sinistro`) REFERENCES `sinistro` (`id_sinistro`),
-  CONSTRAINT `servico_os_ibfk_4` FOREIGN KEY (`id_seguro`) REFERENCES `seguro` (`id_seguro`)
+`id_os` bigint NOT NULL,
+`id_servico` bigint NOT NULL,
+`id_sinistro` bigint NOT NULL,
+`id_seguro` bigint NOT NULL,
+PRIMARY KEY (`id_os`,`id_servico`,`id_sinistro`,`id_seguro`),
+KEY `id_servico` (`id_servico`),
+KEY `id_sinistro` (`id_sinistro`),
+KEY `id_seguro` (`id_seguro`),
+CONSTRAINT `servico_os_ibfk_1` FOREIGN KEY (`id_os`) REFERENCES `ordem_de_servico` (`id_os`),
+CONSTRAINT `servico_os_ibfk_2` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`),
+CONSTRAINT `servico_os_ibfk_3` FOREIGN KEY (`id_sinistro`) REFERENCES `sinistro` (`id_sinistro`),
+CONSTRAINT `servico_os_ibfk_4` FOREIGN KEY (`id_seguro`) REFERENCES `seguro` (`id_seguro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `servico_os`
---
-
-LOCK TABLES `servico_os` WRITE;
-/*!40000 ALTER TABLE `servico_os` DISABLE KEYS */;
-/*!40000 ALTER TABLE `servico_os` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `sinistro`
@@ -430,27 +337,18 @@ DROP TABLE IF EXISTS `sinistro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sinistro` (
-  `id_sinistro` BIGINT NOT NULL AUTO_INCREMENT,
-  `sinistro` TEXT  NOT NULL,
-  `id_cli` BIGINT DEFAULT NULL,
-  `id_seguro` BIGINT DEFAULT NULL,
-  `tipo_seguro` TEXT  DEFAULT NULL,
-  PRIMARY KEY (`id_sinistro`),
-  KEY `id_cli` (`id_cli`),
-  KEY `id_seguro` (`id_seguro`),
-  CONSTRAINT `sinistro_ibfk_1` FOREIGN KEY (`id_cli`) REFERENCES `cliente` (`id_cli`),
-  CONSTRAINT `sinistro_ibfk_2` FOREIGN KEY (`id_seguro`) REFERENCES `seguro` (`id_seguro`)
+`id_sinistro` bigint NOT NULL AUTO_INCREMENT,
+`sinistro` text NULL,
+`id_cli` bigint DEFAULT NULL,
+`id_seguro` bigint DEFAULT NULL,
+`tipo_seguro` text NULL,
+PRIMARY KEY (`id_sinistro`),
+KEY `id_cli` (`id_cli`),
+KEY `id_seguro` (`id_seguro`),
+CONSTRAINT `sinistro_ibfk_1` FOREIGN KEY (`id_cli`) REFERENCES `cliente` (`id_cli`),
+CONSTRAINT `sinistro_ibfk_2` FOREIGN KEY (`id_seguro`) REFERENCES `seguro` (`id_seguro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sinistro`
---
-
-LOCK TABLES `sinistro` WRITE;
-/*!40000 ALTER TABLE `sinistro` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sinistro` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `veiculo`
@@ -460,27 +358,18 @@ DROP TABLE IF EXISTS `veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `veiculo` (
-  `id_veiculo` BIGINT NOT NULL AUTO_INCREMENT,
-  `id_cli` BIGINT NOT NULL,
-  `fabricante_veiculo` TEXT  DEFAULT NULL,
-  `modelo_veiculo` TEXT  DEFAULT NULL,
-  `ano_veiculo` TEXT DEFAULT NULL,
-  `placa_veiculo` TEXT DEFAULT NULL,
-  `cor_veiculo` TEXT  DEFAULT NULL,
-  PRIMARY KEY (`id_veiculo`),
-  KEY `id_cli` (`id_cli`),
-  CONSTRAINT `veiculo_ibfk_1` FOREIGN KEY (`id_cli`) REFERENCES `cliente` (`id_cli`)
+`id_veiculo` bigint NOT NULL AUTO_INCREMENT,
+`id_cli` bigint NOT NULL,
+`fabricante_veiculo` text NULL,
+`modelo_veiculo` text NULL,
+`ano_veiculo` text NULL,
+`placa_veiculo` text NULL,
+`cor_veiculo` text NULL,
+PRIMARY KEY (`id_veiculo`),
+KEY `id_cli` (`id_cli`),
+CONSTRAINT `veiculo_ibfk_1` FOREIGN KEY (`id_cli`) REFERENCES `cliente` (`id_cli`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `veiculo`
---
-
-LOCK TABLES `veiculo` WRITE;
-/*!40000 ALTER TABLE `veiculo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `veiculo` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `viagem`
@@ -490,34 +379,25 @@ DROP TABLE IF EXISTS `viagem`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `viagem` (
-  `id_viagem` BIGINT NOT NULL AUTO_INCREMENT,
-  `id_mot` BIGINT NOT NULL,
-  `id_frota` BIGINT NOT NULL,
-  `bairro_destino_viagem` TEXT  DEFAULT NULL,
-  `bairro_partida_viagem` TEXT  DEFAULT NULL,
-  `endereco_destino_viagem` TEXT  DEFAULT NULL,
-  `endereco_partida_viagem` TEXT  DEFAULT NULL,
-  `cidade_destino_viagem` TEXT  DEFAULT NULL,
-  `cidade_partida_viagem` TEXT  DEFAULT NULL,
-  `uf_destino_viagem` TEXT DEFAULT NULL,
-  `uf_partida_viagem` TEXT DEFAULT NULL,
-  `obs_viagem` text,
-  PRIMARY KEY (`id_viagem`),
-  KEY `id_mot` (`id_mot`),
-  KEY `id_frota` (`id_frota`),
-  CONSTRAINT `viagem_ibfk_1` FOREIGN KEY (`id_mot`) REFERENCES `motorista` (`id_mot`),
-  CONSTRAINT `viagem_ibfk_2` FOREIGN KEY (`id_frota`) REFERENCES `frota` (`id_frota`)
+`id_viagem` bigint NOT NULL AUTO_INCREMENT,
+`id_mot` bigint NOT NULL,
+`id_frota` bigint NOT NULL,
+`bairro_destino_viagem` text NULL,
+`bairro_partida_viagem` text NULL,
+`endereco_destino_viagem` text NULL,
+`endereco_partida_viagem` text NULL,
+`cidade_destino_viagem` text NULL,
+`cidade_partida_viagem` text NULL,
+`uf_destino_viagem` text NULL,
+`uf_partida_viagem` text NULL,
+`obs_viagem` text,
+PRIMARY KEY (`id_viagem`),
+KEY `id_mot` (`id_mot`),
+KEY `id_frota` (`id_frota`),
+CONSTRAINT `viagem_ibfk_1` FOREIGN KEY (`id_mot`) REFERENCES `motorista` (`id_mot`),
+CONSTRAINT `viagem_ibfk_2` FOREIGN KEY (`id_frota`) REFERENCES `frota` (`id_frota`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `viagem`
---
-
-LOCK TABLES `viagem` WRITE;
-/*!40000 ALTER TABLE `viagem` DISABLE KEYS */;
-/*!40000 ALTER TABLE `viagem` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `viagem_servico`
@@ -527,23 +407,14 @@ DROP TABLE IF EXISTS `viagem_servico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `viagem_servico` (
-  `id_viagem` BIGINT NOT NULL AUTO_INCREMENT,
-  `id_os` BIGINT NOT NULL,
-  PRIMARY KEY (`id_viagem`,`id_os`),
-  KEY `id_os` (`id_os`),
-  CONSTRAINT `viagem_servico_ibfk_1` FOREIGN KEY (`id_viagem`) REFERENCES `viagem` (`id_viagem`),
-  CONSTRAINT `viagem_servico_ibfk_2` FOREIGN KEY (`id_os`) REFERENCES `ordem_de_servico` (`id_os`)
+`id_viagem` bigint NOT NULL AUTO_INCREMENT,
+`id_os` bigint NOT NULL,
+PRIMARY KEY (`id_viagem`,`id_os`),
+KEY `id_os` (`id_os`),
+CONSTRAINT `viagem_servico_ibfk_1` FOREIGN KEY (`id_viagem`) REFERENCES `viagem` (`id_viagem`),
+CONSTRAINT `viagem_servico_ibfk_2` FOREIGN KEY (`id_os`) REFERENCES `ordem_de_servico` (`id_os`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `viagem_servico`
---
-
-LOCK TABLES `viagem_servico` WRITE;
-/*!40000 ALTER TABLE `viagem_servico` DISABLE KEYS */;
-/*!40000 ALTER TABLE `viagem_servico` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Final view structure for view `motoristaOnly`
@@ -571,5 +442,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-09-28 18:05:41
