@@ -17,12 +17,12 @@ INSERT INTO cargo VALUES
 
 #Table FUNCIONARIO
 INSERT INTO funcionario VALUES
-(0,"1","Theofilo","Amaral","1980-06-16","12223609","12345678912","2000-06-10","m","12345678901","theo@amaralguincho.com","SP","Caraguatatuba",null),
-(0,"2","Jéssica","Amaral","1980-06-16","12223609","12345675912","2000-06-10","m","12345618901","jessica@amaralguincho.com","SP","Caraguatatuba",null),
-(0,"1","Paulo","Roberto Amaral","1980-06-16","12223609","12545678912","2000-06-10","m","12345678301","pauloRoberto@amaralguincho.com","SP","Caraguatatuba",null),
-(0,"3","Gabriel","Castro","1980-06-16","12223609","12345658912","2000-06-10","m","12345678921","gabriel@amaralguincho.com","SP","São José dos Campos",null),
-(0,"3","Anderson","Panda Guedes","1980-06-16","12223609","12345628912","2000-06-10","m","12345378921","pandaozika@amaralguincho.com","SP","São José dos Campos",null),
-(0,"3","Daniel","Miacci","1980-06-16","12223609","12345278912","2000-06-10","m","12345648921","miacci@amaralguincho.com","SP","São José dos Campos",null);
+(0,"1","Theofilo","Amaral","1980-06-16","12223609","12345678912","2000-06-10","m","12345678901","theo@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","Caraguatatuba",null),
+(0,"2","Jéssica","Amaral","1980-06-16","12223609","12345675912","2000-06-10","m","12345618901","jessica@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","Caraguatatuba",null),
+(0,"1","Paulo","Roberto Amaral","1980-06-16","12223609","12545678912","2000-06-10","m","12345678301","pauloRoberto@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","Caraguatatuba",null),
+(0,"3","Gabriel","Castro","1980-06-16","12223609","12345658912","2000-06-10","m","12345678921","gabriel@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","São José dos Campos",null),
+(0,"3","Anderson","Panda Guedes","1980-06-16","12223609","12345628912","2000-06-10","m","12345378921","pandaozika@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","São José dos Campos",null),
+(0,"3","Daniel","Miacci","1980-06-16","12223609","12345278912","2000-06-10","m","12345648921","miacci@amaralguincho.com","Rua Pamambi, 255","Pamambi","SP","São José dos Campos",null);
 
 #Table MOTORISTA
 INSERT INTO motorista VALUES
@@ -32,23 +32,23 @@ INSERT INTO motorista VALUES
 
 #Table SEGURO
 INSERT INTO seguro VALUES
-(0,"Seguros Azul","303","12144008","01482","1236251401","1238104030","1240481621","1104552135","Ricardo","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","99","100","100","200","99","100","200","99"),
-(0,"Porto Seguro","404","52014755","78100","1237140250","1234015081","1201423080","1268762125","Caio","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","99","100","100","200","99","100","200","99"),
-(0,"Porto Seguro","404","14725801","25410","1231458701","1239248920","1014852104","1245636816","Felipe","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","99","100","100","200","99","100","200","99"),
-(0,"Porto Seguro","404","25814706","25420","1230140010","1239172045","1204804845","1264521321","Andre","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","99","100","100","200","99","100","200","99");
+(0,"Seguro25blue","Seguros Azul","303","01482","Rua Califonia","Joao","joaozinho.98@hotmail.com","1236251401","1238104030","1240481621","1589552135","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","99","100","100","200","99","100","200","99"),
+(0,"PortoSaveN","Seguros Azul","303","01482","Rua Califonia","Joao","joaozinho.98@hotmail.com","1236251401","1238104030","1240481621","1589552135","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","99","100","100","200","99","100","200","99"),
+(0,"Zetta Kub","Seguros Azul","303","01482","Rua Califonia","Joao","joaozinho.98@hotmail.com","1236251401","1238104030","1240481621","1589552135","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","99","100","100","200","99","100","200","99"),
+(0,"minums","Seguros Azul","303","01482","Rua Califonia","Joao","joaozinho.98@hotmail.com","1236251401","1238104030","1240481621","1589552135","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","100","200","99","100","99","100","100","200","99","100","200","99");
 
 #Table FROTA
 INSERT INTO frota VALUES
-(0,"IVECO-Guincho","IVECO","2014-01-02","VEIGIN","Guincho","abc1234","Amarelo",null),
-(0,"Taxi","Honda Civic","2015-01-02","HONDA","Taxi","tax1666","Branco",null),
-(0,"IVECO-SOS-Guincho","IVECO","2014-08-01","VEIGIN","SOS","sos4004","Amarelo",null);
+(0,"IVECO-Guincho","IVECO","2014","VEIGIN","Guincho","abc1234","Amarelo",null),
+(0,"Taxi","Honda Civic","2015","HONDA","Taxi","tax1666","Branco",null),
+(0,"IVECO-SOS-Guincho","IVECO","2014","VEIGIN","SOS","sos4004","Amarelo",null);
 
 #Table Veiculo
 INSERT INTO veiculo VALUES
-(0,"1","Hyundai","HB20","2014-01-02","asd1596","Prata"),
-(0,"2","Honda", "Civic","2015-10-01","enh0660","Branco"),
-(0,"3","Volkswagen"," GOL","2013-04-03","mjb4050","Preto"),
-(0,"4","Ford","FOCUS","2015-02-03","asw2147","Prata");
+(0,"1","Hyundai","HB20","2014","asd-1596","Prata"),
+(0,"2","Honda", "Civic","2015","enh-0660","Branco"),
+(0,"3","Volkswagen"," GOL","2013","mjb-4050","Preto"),
+(0,"4","Ford","FOCUS","2015","asw-2147","Prata");
 
 #Table Sinistro
 INSERT INTO sinistro VALUES
@@ -66,9 +66,15 @@ INSERT INTO servico VALUES
 
 #Table Viagem
 INSERT INTO viagem VALUES
- (0,"1","3","SJCampos","Jacarei","Bosque dos Eucaliptos","Vila Branca","24","25","SJCampos","Jacarei","SP","SP","xxx"),
-(0,"1","3","Jacarei","SJCampos","Vila Branca","Jardim Bela Vista","101","205","Jacarei","SJCampos","SP","SP","xxx"),
-(0,"1","2","Belo Horizonte","SJCampos","Rua José de Assis","Avenida Cidade Jardim","262","262","Belo Horizonte","SJCampos","MG","SP","xxx");
+(0,"1","3","SJCampos","Jacarei","Bosque dos Eucaliptos","Vila Branca","SJCampos","Jacarei","SP","SP","xxx"),
+(0,"1","3","Jacarei","SJCampos","Vila Branca","Jardim Bela Vista","Jacarei","SJCampos","SP","SP","xxx"),
+(0,"1","2","Belo Horizonte","SJCampos","Rua José de Assis","Avenida Cidade Jardim","Belo Horizonte","SJCampos","MG","SP","xxx");
+
+#Table Ordem de Serviço
+INSERT INTO ordem_de_servico VALUES
+(0,"1","4","2016-04-14",null,"Aberto"),
+(0,"2","3","2016-02-01",null,"Fechado"),
+(0,"3","2","2016-02-03",null,"Rejeitado");
 
 #Table Viagem_Serviço
 INSERT INTO viagem_servico VALUES
@@ -76,17 +82,11 @@ INSERT INTO viagem_servico VALUES
 (0,2),
 (0,3);
 
-#Table Ordem de Serviço
-INSERT INTO ordem_de_servico VALUES
-(0,"1","4","2016-04-14","xxx","Aberto"),
-(0,"2","3","2016-02-01","xxx","Fechado"),
-(0,"3","2","2016-02-03","xxx","Rejeitado");
-
 #Table servico_os
 INSERT INTO servico_os VALUES
-(0,"1","1"),
-(0,"2","2"),
-(0,"3","4");
+("2","1","1","1"),
+("2","2","2","1"),
+("2","3","4","1");
 
 system clear;
 
