@@ -1,204 +1,117 @@
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+-------------------------------------
+ -- Amaral Guincho Database 3 Schema
+-------------------------------------
 
---
--- Table structure for table `cargo`
---
-DROP DATABASE IF EXISTS agencrypted;
-CREATE DATABASE agencrypted;
-use agencrypted;
+DROP DATABASE IF EXISTS amaralguincho;
+CREATE DATABASE amaralguincho;
+USE amaralguincho;
 
-DROP TABLE IF EXISTS `cargo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cargo` (
-`id_cargo` bigint NOT NULL AUTO_INCREMENT,
-`cargo` text NULL,
-`salario` text NOT NULL,
-PRIMARY KEY (`id_cargo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `occupation`;
+CREATE TABLE `occupation` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `description` text NULL,
+  `salary` text NULL,
+  PRIMARY KEY (`id`)
+);
 
---
--- Dumping data for table `cargo`
---
+DROP TABLE IF EXISTS `employee`;
+CREATE TABLE `employee`(
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `occupation` bigint NOT NULL,
+  `name` text NULL,
+  `lastname` text NULL,
+  `dob` datetime NULL,
+  `cpf` text NULL,
+  `rg` text NULL,
+  `sex` char NULL,
+  `email` text NOT NULL,
+  `cep` text NULL,
+  `address` text NULL,
+  `img` text NULL,
+  PRIMARY KEY(`id`),
+  CONSTRAINT `occupationID_employee` FOREIGN KEY (`occupation`) REFERENCES `occupation` (`id`)
+);
 
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`(
+  `employee` bigint NOT NULL AUTO_INCREMENT,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  PRIMARY KEY(`employee`),
+  CONSTRAINT `employeeID_user` FOREIGN KEY(`employee`) REFERENCES `employee` (`id`)
+);
 
---
--- Table structure for table `cliente`
---
+DROP TABLE IF EXISTS `driver`;
+CREATE TABLE `driver`(
+  `employee` bigint NOT NULL,
+  `license_number` text NULL,
+  `register_number` text NULL,
+  `expiration_date` text NULL,
+  `creation_date` text NULL,
+  `location` text NULL,
+  PRIMARY KEY(`employee`),
+  CONSTRAINT `employeeID_driver` FOREIGN KEY(`employee`) REFERENCES `employee` (`id`)
+);
 
-DROP TABLE IF EXISTS `cliente`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cliente` (
-`id_cli` bigint NOT NULL AUTO_INCREMENT,
-`nome_cli` text NULL,
-`sobrenome_cli` text NULL,
-`cpf_cli` text NULL,
-`email_cli` text NULL,
-`sx_cli` text DEFAULT NULL,
-`telefone_cli` text NULL,
-`dtnasc_cli` text NULL,
-`cep_cli` text NULL,
-`bairro_cli` text NULL,
-`cid_cli` text NULL,
-`uf_cli` text NULL,
-`endereco_cli` text NULL,
-`img_cli` text,
-PRIMARY KEY (`id_cli`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `vehicle_type`;
+CREATE TABLE `vehicle_type` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `type` text NOT NULL,
+  PRIMARY KEY(`id`)
+);
 
---
--- Table structure for table `frota`
---
+DROP TABLE IF EXISTS `business_vehicle`;
+CREATE TABLE `business_vehicle` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `type` bigint NOT NULL,
+  `nick` text NULL,
+  `plate` text NULL,
+  `manufacture_date` text NULL,
+  `color` text NULL,
+  `img` text NULL,
+  `model` text NULL,
+  PRIMARY KEY(`id`),
+  CONSTRAINT `vehicle_typeID` FOREIGN KEY(`type`) REFERENCES `vehicle_type` (`id`)
+);
 
-DROP TABLE IF EXISTS `frota`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `frota` (
-`id_frota` bigint NOT NULL AUTO_INCREMENT,
-`nome_frota` text NULL,
-`modelo_frota` text NULL,
-`ano_frota` text NULL,
-`fabricante_frota` text NULL,
-`tipo_frota` text NULL,
-`placa_frota` text NOT NULL,
-`cor_frota` text NULL,
-`img_frota` text,
-PRIMARY KEY (`id_frota`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `displacement`;
+CREATE TABLE `displacement` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `employee` bigint NOT NULL,
+  `vehicle` bigint NOT NULL,
+  `from` text NOT NULL,
+  `to` text NOT NULL,
+  `distance` text NOT NULL,
+  PRIMARY KEY(`id`),
+  CONSTRAINT `employeeID_displacement` FOREIGN KEY(`employee`) REFERENCES `employee` (`id`),
+  CONSTRAINT `vehicleID_displacement` FOREIGN KEY(`vehicle`) REFERENCES `business_vehicle` (`id`)
+);
 
---
--- Table structure for table `funcionario`
---
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE `customer` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `name` text NULL,
+  `lastname` text NULL,
+  `phone` text NULL,
+  `email` text NULL,
+  PRIMARY KEY(`id`)
+);
 
-DROP TABLE IF EXISTS `funcionario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `funcionario` (
-`id_func` bigint NOT NULL AUTO_INCREMENT,
-`id_cargo` bigint NOT NULL,
-`nome_func` text NULL,
-`sobrenome_func` text NULL,
-`dtnasc_func` text NULL,
-`cep_func` text NULL,
-`cpf_func` text NULL,
-`dtcont_func` text NULL,
-`sx_func` text NULL,
-`tel_func` text NULL,
-`email_func` text,
-`residencia_func` text NULL,
-`bairro_func` text NULL,
-`uf_func` text NULL,
-`cid_func` text NULL,
-`img_func` text,
-PRIMARY KEY (`id_func`),
-KEY `id_cargo` (`id_cargo`),
-CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `cargo` (`id_cargo`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `vehicle`;
+CREATE TABLE `vehicle` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `customer` bigint NOT NULL,
+  `plate` text NULL,
+  `manufacture_date` text NULL,
+  `color` text NULL,
+  `model` text NULL,
+  PRIMARY KEY(`id`),
+  CONSTRAINT `customer_vehicle` FOREIGN KEY(`customer`) REFERENCES `customer` (`id`)
+);
 
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 TRIGGER defaultLogin
-AFTER INSERT ON funcionario
-FOR EACH ROW
-BEGIN
-INSERT INTO login VALUES(0,NEW.email_func,"0000",new.id_func);
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Table structure for table `login`
---
-
-DROP TABLE IF EXISTS `login`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `login` (
-`id_login` bigint NOT NULL AUTO_INCREMENT,
-`username_login` text NULL,
-`password_login` text NULL,
-`id_func` bigint NOT NULL,
-PRIMARY KEY (`id_login`),
-KEY `id_func` (`id_func`),
-CONSTRAINT `login_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `motorista`
---
-
-DROP TABLE IF EXISTS `motorista`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `motorista` (
-`id_mot` bigint NOT NULL AUTO_INCREMENT,
-`id_func` bigint NOT NULL,
-`nome_hab` text NULL,
-`idhab_hab` text NULL,
-`nregistro_hab` text NULL,
-`validade_hab` text NOT NULL,
-`local_hab` text NULL,
-`dtemissao_hab` text NOT NULL,
-PRIMARY KEY (`id_mot`),
-KEY `id_func` (`id_func`),
-CONSTRAINT `motorista_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Temporary view structure for view `motoristaOnly`
---
-
-DROP TABLE IF EXISTS `motoristaOnly`;
-/*!50001 DROP VIEW IF EXISTS `motoristaOnly`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE VIEW `motoristaOnly` AS SELECT
-1 AS `id_func`,
-1 AS `nome_func`,
-1 AS `sobrenome_func`,
-1 AS `img_func`,
-1 AS `tel_func`,
-1 AS `id_mot`*/;
-SET character_set_client = @saved_cs_client;
-
---
--- Table structure for table `ordem_de_servico`
---
---
--- Table structure for table `seguro`
---
-
-DROP TABLE IF EXISTS `seguro`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `seguro` (
-`id_seguro` bigint NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `insurance`;
+CREATE TABLE `insurance` (
+`id` bigint NOT NULL AUTO_INCREMENT,
 `nome_seguro` text NULL,
 `nome_amigavel` text NULL,
 `codigo_prestador` text NULL,
@@ -262,184 +175,36 @@ CREATE TABLE `seguro` (
 `vigilante_40km` text NULL,
 `vigilante_mais40km` text NULL,
 `vigilante_hora_trabalhada` text NULL,
-PRIMARY KEY (`id_seguro`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+PRIMARY KEY (`id`)
+);
 
---
--- Table structure for table `servico`
---
+DROP TABLE IF EXISTS `service_type`;
+CREATE TABLE `service_type` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `description` text NULL,
+  `cost` text NULL,
+  PRIMARY KEY(`id`)
+);
 
-DROP TABLE IF EXISTS `servico`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `servico` (
-`id_servico` bigint NOT NULL AUTO_INCREMENT,
-`tipo_servico` text NULL,
-`precoR_servico` text NOT NULL,
-`precoC_servico` text NOT NULL,
-PRIMARY KEY (`id_servico`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `service`;
+CREATE TABLE `service` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `type` bigint NOT NULL,
+  `vehicle` bigint NOT NULL,
+  `status` text NULL,
+  `issue_date` text NULL,
+  `insurance` bigint NOT NULL,
+  `issue_number` bigint NOT NULL,
+  PRIMARY KEY(`id`),
+  CONSTRAINT `type_serviceID` FOREIGN KEY(`type`) REFERENCES `service_type` (`id`),
+  CONSTRAINT `vehicle_serviceID` FOREIGN KEY(`vehicle`) REFERENCES `vehicle` (`id`),
+  CONSTRAINT `insurance_serviceID` FOREIGN KEY(`insurance`) REFERENCES `insurance` (`id`)
+);
 
---
--- Table structure for table `servico_os`
---
-
-DROP TABLE IF EXISTS `servico_os`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `servico_os` (
-`id_os` bigint NOT NULL,
-`id_servico` bigint NOT NULL,
-`id_sinistro` bigint NOT NULL,
-`id_seguro` bigint NOT NULL,
-PRIMARY KEY (`id_os`,`id_servico`,`id_sinistro`,`id_seguro`),
-KEY `id_servico` (`id_servico`),
-KEY `id_sinistro` (`id_sinistro`),
-KEY `id_seguro` (`id_seguro`),
-CONSTRAINT `servico_os_ibfk_1` FOREIGN KEY (`id_os`) REFERENCES `ordem_de_servico` (`id_os`),
-CONSTRAINT `servico_os_ibfk_2` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`),
-CONSTRAINT `servico_os_ibfk_3` FOREIGN KEY (`id_sinistro`) REFERENCES `sinistro` (`id_sinistro`),
-CONSTRAINT `servico_os_ibfk_4` FOREIGN KEY (`id_seguro`) REFERENCES `seguro` (`id_seguro`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `sinistro`
---
-
-DROP TABLE IF EXISTS `sinistro`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sinistro` (
-`id_sinistro` bigint NOT NULL AUTO_INCREMENT,
-`sinistro` text NULL,
-`id_cli` bigint DEFAULT NULL,
-`id_seguro` bigint DEFAULT NULL,
-`tipo_seguro` text NULL,
-PRIMARY KEY (`id_sinistro`),
-KEY `id_cli` (`id_cli`),
-KEY `id_seguro` (`id_seguro`),
-CONSTRAINT `sinistro_ibfk_1` FOREIGN KEY (`id_cli`) REFERENCES `cliente` (`id_cli`),
-CONSTRAINT `sinistro_ibfk_2` FOREIGN KEY (`id_seguro`) REFERENCES `seguro` (`id_seguro`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `veiculo`
---
-
-DROP TABLE IF EXISTS `veiculo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `veiculo` (
-`id_veiculo` bigint NOT NULL AUTO_INCREMENT,
-`id_cli` bigint NOT NULL,
-`fabricante_veiculo` text NULL,
-`modelo_veiculo` text NULL,
-`ano_veiculo` text NULL,
-`placa_veiculo` text NULL,
-`cor_veiculo` text NULL,
-PRIMARY KEY (`id_veiculo`),
-KEY `id_cli` (`id_cli`),
-CONSTRAINT `veiculo_ibfk_1` FOREIGN KEY (`id_cli`) REFERENCES `cliente` (`id_cli`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `viagem`
---
-
-DROP TABLE IF EXISTS `viagem`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `viagem` (
-`id_viagem` bigint NOT NULL AUTO_INCREMENT,
-`id_mot` bigint NOT NULL,
-`id_frota` bigint NOT NULL,
-`bairro_destino_viagem` text NULL,
-`bairro_partida_viagem` text NULL,
-`endereco_destino_viagem` text NULL,
-`endereco_partida_viagem` text NULL,
-`cidade_destino_viagem` text NULL,
-`cidade_partida_viagem` text NULL,
-`uf_destino_viagem` text NULL,
-`uf_partida_viagem` text NULL,
-`obs_viagem` text,
-PRIMARY KEY (`id_viagem`),
-KEY `id_mot` (`id_mot`),
-KEY `id_frota` (`id_frota`),
-CONSTRAINT `viagem_ibfk_1` FOREIGN KEY (`id_mot`) REFERENCES `motorista` (`id_mot`),
-CONSTRAINT `viagem_ibfk_2` FOREIGN KEY (`id_frota`) REFERENCES `frota` (`id_frota`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `ordem_de_servico`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ordem_de_servico` (
-`id_os` bigint NOT NULL AUTO_INCREMENT,
-`id_func` bigint NOT NULL,
-`id_veiculo` bigint NOT NULL,
-`dtab_os` text NOT NULL,
-`agendamento_os` text DEFAULT NULL,
-`status_os` text NULL,
-PRIMARY KEY (`id_os`),
-KEY `id_func` (`id_func`),
-KEY `id_veiculo` (`id_veiculo`),
-CONSTRAINT `ordem_de_servico_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`),
-CONSTRAINT `ordem_de_servico_ibfk_2` FOREIGN KEY (`id_veiculo`) REFERENCES `veiculo` (`id_veiculo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `viagem_servico`
---
-
-DROP TABLE IF EXISTS `viagem_servico`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `viagem_servico` (
-`id_viagem` bigint NOT NULL AUTO_INCREMENT,
-`id_os` bigint NOT NULL,
-PRIMARY KEY (`id_viagem`,`id_os`),
-KEY `id_os` (`id_os`),
-CONSTRAINT `viagem_servico_ibfk_1` FOREIGN KEY (`id_viagem`) REFERENCES `viagem` (`id_viagem`),
-CONSTRAINT `viagem_servico_ibfk_2` FOREIGN KEY (`id_os`) REFERENCES `ordem_de_servico` (`id_os`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
-CREATE TABLE `userlog`(
-  `logId` bigint NOT NULL AUTO_INCREMENT,
-  `funcinario` bigint NOT NULL,
-  `acao` TEXT NULL,
-  `hora` TEXT NULL,
-  PRIMARY KEY (`logid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
---
--- Final view structure for view `motoristaOnly`
---
-
-/*!50001 DROP VIEW IF EXISTS `motoristaOnly`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-
-/*!50001 VIEW `motoristaOnly` AS select `func`.`id_func` AS `id_func`,`func`.`nome_func` AS `nome_func`,`func`.`sobrenome_func` AS `sobrenome_func`,`func`.`img_func` AS `img_func`,`func`.`tel_func` AS `tel_func`,`mot`.`id_mot` AS `id_mot` from (`funcionario` `func` join `motorista` `mot` on((`func`.`id_func` = `mot`.`id_func`))) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+DROP TABLE IF EXISTS `travel`;
+CREATE TABLE `travel` (
+  `service` bigint NOT NULL,
+  `displacement` bigint NOT NULL,
+  CONSTRAINT `serviceID` FOREIGN KEY(`service`) REFERENCES `service` (`id`),
+  CONSTRAINT `displacementID` FOREIGN KEY(`displacement`) REFERENCES `displacement` (`id`)
+);
