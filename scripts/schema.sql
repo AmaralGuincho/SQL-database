@@ -6,7 +6,6 @@ DROP DATABASE IF EXISTS amaralguincho;
 CREATE DATABASE amaralguincho;
 USE amaralguincho;
 
-DROP TABLE IF EXISTS `occupation`;
 CREATE TABLE `occupation` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `description` text NULL,
@@ -14,13 +13,12 @@ CREATE TABLE `occupation` (
   PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee`(
   `id` bigint NOT NULL AUTO_INCREMENT,
   `occupation` bigint NOT NULL,
   `name` text NULL,
   `lastname` text NULL,
-  `dob` datetime NULL,
+  `dob` text NULL,
   `cpf` text NULL,
   `rg` text NULL,
   `sex` char NULL,
@@ -32,7 +30,6 @@ CREATE TABLE `employee`(
   CONSTRAINT `occupationID_employee` FOREIGN KEY (`occupation`) REFERENCES `occupation` (`id`)
 );
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`(
   `employee` bigint NOT NULL AUTO_INCREMENT,
   `username` text NOT NULL,
@@ -41,7 +38,6 @@ CREATE TABLE `users`(
   CONSTRAINT `employeeID_user` FOREIGN KEY(`employee`) REFERENCES `employee` (`id`)
 );
 
-DROP TABLE IF EXISTS `driver`;
 CREATE TABLE `driver`(
   `employee` bigint NOT NULL,
   `license_number` text NULL,
@@ -53,14 +49,12 @@ CREATE TABLE `driver`(
   CONSTRAINT `employeeID_driver` FOREIGN KEY(`employee`) REFERENCES `employee` (`id`)
 );
 
-DROP TABLE IF EXISTS `vehicle_type`;
 CREATE TABLE `vehicle_type` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `type` text NOT NULL,
   PRIMARY KEY(`id`)
 );
 
-DROP TABLE IF EXISTS `business_vehicle`;
 CREATE TABLE `business_vehicle` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `type` bigint NOT NULL,
@@ -74,11 +68,12 @@ CREATE TABLE `business_vehicle` (
   CONSTRAINT `vehicle_typeID` FOREIGN KEY(`type`) REFERENCES `vehicle_type` (`id`)
 );
 
-DROP TABLE IF EXISTS `displacement`;
 CREATE TABLE `displacement` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `employee` bigint NOT NULL,
   `vehicle` bigint NOT NULL,
+  `time_left` text NULL,
+  `time_arrived` text NULL,
   `from` text NOT NULL,
   `to` text NOT NULL,
   `distance` text NOT NULL,
@@ -87,7 +82,6 @@ CREATE TABLE `displacement` (
   CONSTRAINT `vehicleID_displacement` FOREIGN KEY(`vehicle`) REFERENCES `business_vehicle` (`id`)
 );
 
-DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `name` text NULL,
@@ -97,7 +91,6 @@ CREATE TABLE `customer` (
   PRIMARY KEY(`id`)
 );
 
-DROP TABLE IF EXISTS `vehicle`;
 CREATE TABLE `vehicle` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `customer` bigint NOT NULL,
@@ -109,7 +102,6 @@ CREATE TABLE `vehicle` (
   CONSTRAINT `customer_vehicle` FOREIGN KEY(`customer`) REFERENCES `customer` (`id`)
 );
 
-DROP TABLE IF EXISTS `insurance`;
 CREATE TABLE `insurance` (
 `id` bigint NOT NULL AUTO_INCREMENT,
 `nome_seguro` text NULL,
@@ -178,7 +170,6 @@ CREATE TABLE `insurance` (
 PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `service_type`;
 CREATE TABLE `service_type` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `description` text NULL,
@@ -186,7 +177,6 @@ CREATE TABLE `service_type` (
   PRIMARY KEY(`id`)
 );
 
-DROP TABLE IF EXISTS `service`;
 CREATE TABLE `service` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `type` bigint NOT NULL,
@@ -201,7 +191,6 @@ CREATE TABLE `service` (
   CONSTRAINT `insurance_serviceID` FOREIGN KEY(`insurance`) REFERENCES `insurance` (`id`)
 );
 
-DROP TABLE IF EXISTS `travel`;
 CREATE TABLE `travel` (
   `service` bigint NOT NULL,
   `displacement` bigint NOT NULL,
