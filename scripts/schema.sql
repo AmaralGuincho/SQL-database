@@ -21,7 +21,7 @@ CREATE TABLE `employee`(
   `dob` text NULL,
   `cpf` text NULL,
   `rg` text NULL,
-  `sex` char NULL,
+  `sex` text NULL,
   `email` text NOT NULL,
   `cep` text NULL,
   `address` text NULL,
