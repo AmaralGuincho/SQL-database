@@ -1,5 +1,7 @@
 -- # DEMO fake data
 
+USE amaralguincho;
+
 INSERT INTO `occupation` VALUES
 (null,"administrator","400000,00"),
 (null,"secretary","200000,00"),
