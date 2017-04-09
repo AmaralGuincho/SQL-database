@@ -1,6 +1,6 @@
--------------------------------------
- -- Amaral Guincho Database 3 Schema
--------------------------------------
+-- -----------------------------------
+--  Amaral Guincho Database 3 Schema
+-- -----------------------------------
 
 DROP DATABASE IF EXISTS amaralguincho;
 CREATE DATABASE amaralguincho;
