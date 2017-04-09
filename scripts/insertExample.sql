@@ -1,4 +1,4 @@
-# DEMO fake data
+-- # DEMO fake data
 
 INSERT INTO `occupation` VALUES
 (null,"administrator","400000,00"),
