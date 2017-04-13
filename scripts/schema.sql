@@ -30,7 +30,7 @@ CREATE TABLE `employee`(
   CONSTRAINT `occupationID_employee` FOREIGN KEY (`occupation`) REFERENCES `occupation` (`id`)
 );
 
-CREATE TABLE `users`(
+CREATE TABLE `user`(
   `employee` bigint NOT NULL AUTO_INCREMENT,
   `username` text NOT NULL,
   `password` text NOT NULL,
