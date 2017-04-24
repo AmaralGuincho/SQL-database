@@ -120,34 +120,19 @@ PRIMARY KEY (`id`)
 
 CREATE TABLE `insurance_service` (
   `insurance` bigint NOT NULL,
-  `40km` text NULL,
+  `type` text NOT NULL,
+  `to_40km` text NULL,
   `more_than_40km` text NULL,
   `working_hours` text NULL,
   `watting_hours` text NULL,
-  `type` ENUM(
-    'ride',
-    'superlight',
-    'motocycle',
-    'garage',
-    're',
-    'rollerblades',
-    'cl',
-    'heavy-sos',
-    'ultra-heavy-sos',
-    'mechanic-sos',
-    'national-depart',
-    'international-depart',
-    'confection-depart',
-    'depart',
-    'vigilant'
-  ) NOT NULL,
-  PRIMARY KEY(`insurance`),
+  KEY `insurance` (`insurance`),
   CONSTRAINT FOREIGN KEY(`insurance`) REFERENCES `insurance`(`id`)
 );
 
 CREATE TABLE `service_type` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `description` text NULL,
+  `internal_cost` text NULL,
   `cost` text NULL,
   PRIMARY KEY(`id`)
 );
